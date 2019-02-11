@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Polyline?>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <HBox alignment="CENTER_RIGHT" prefHeight="36.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="66.0" text="Abdoul Aziz" textAlignment="CENTER">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <VBox alignment="TOP_CENTER" focusTraversable="true" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="TOP_LEFT">
+         <children>
+            <HBox alignment="CENTER" prefHeight="31.0" prefWidth="600.0">
+               <children>
+                  <Label text="EAT WITH US" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="37.0" prefWidth="600.0">
+               <children>
+                  <MenuBar prefHeight="29.0" prefWidth="277.0" style="-fx-background-color: grey;">
+                    <menus>
+                      <Menu mnemonicParsing="false" text="Budget">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="Close" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text=" Mes recettes ">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="Delete" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Forum">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="About" />
+                        </items>
+                      </Menu>
+                        <Menu mnemonicParsing="false" text="Profile">
+                          <items>
+                            <MenuItem mnemonicParsing="false" text="Action 1" />
+                          </items>
+                        </Menu>
+                    </menus>
+                  </MenuBar>
+               </children>
+            </HBox>
+            <Label prefHeight="34.0" prefWidth="600.0" text="                                                                                     Profile" />
+            <Line endX="100.0" startX="-37.83343505859375" strokeType="OUTSIDE" />
+            <Polyline blendMode="SRC_ATOP" fill="#a5a89e" points="-50.0, -40.0, 50.0, -40.0, 2.66668701171875, 19.0, -50.0, -40.0" stroke="#000000be" strokeType="INSIDE" />
+            <Line endX="37.919097900390625" rotate="180.0" startX="-100.0" strokeType="OUTSIDE" />
+            <Label prefHeight="42.0" prefWidth="600.0" text="                                              Nom: xxxx" />
+            <Label prefHeight="17.0" prefWidth="309.0" text="                                                       Adresse: xxxx" />
+            <Label prefHeight="40.0" prefWidth="310.0" text="  Prenom: xxxx" />
+            <Label prefHeight="17.0" prefWidth="264.0" text="                                                Tel: xxxx" />
+            <Label prefHeight="38.0" prefWidth="317.0" text="  Mail:" />
+            <Button blendMode="HARD_LIGHT" mnemonicParsing="false" prefHeight="23.0" prefWidth="52.0" text="Return" textFill="#161616f7" textOverrun="CENTER_WORD_ELLIPSIS">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Reflection />
+                     </bumpInput>
+                     <light>
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
+            <Label prefHeight="17.0" prefWidth="600.0" text="                                                                          @ copyright by G5">
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Label>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
