@@ -3,12 +3,10 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.ScrollBar?>
-<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -29,11 +27,7 @@
                   <Insets right="8.0" />
                </HBox.margin>
             </ImageView>
-            <Label contentDisplay="CENTER" text="keylie balanci" textAlignment="CENTER">
-               <HBox.margin>
-                  <Insets right="10.0" />
-               </HBox.margin>
-            </Label>
+            <Hyperlink text="keylie balanci" />
          </children>
       </HBox>
    </top>
@@ -61,30 +55,10 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="26.0" prefWidth="601.0" style="-fx-background-color: grey;">
                <children>
-                  <MenuBar prefHeight="29.0" prefWidth="312.0">
-                    <menus>
-                      <Menu mnemonicParsing="false" text="Budget">
-                        <items>
-                          <MenuItem mnemonicParsing="false" text="Close" />
-                        </items>
-                      </Menu>
-                      <Menu mnemonicParsing="false" text=" Mes recettes ">
-                        <items>
-                          <MenuItem mnemonicParsing="false" text="Delete" />
-                        </items>
-                      </Menu>
-                      <Menu mnemonicParsing="false" text="Forum">
-                        <items>
-                          <MenuItem mnemonicParsing="false" text="About" />
-                        </items>
-                      </Menu>
-                        <Menu mnemonicParsing="false" text="Profile">
-                          <items>
-                            <MenuItem mnemonicParsing="false" text="Action 1" />
-                          </items>
-                        </Menu>
-                    </menus>
-                  </MenuBar>
+                  <Hyperlink text="Mon budget" />
+                  <Hyperlink text="Forum" />
+                  <Hyperlink />
+                  <Hyperlink text="Mes Recettes" />
                </children>
             </HBox>
             <VBox alignment="CENTER" prefHeight="117.0" prefWidth="600.0">
@@ -162,84 +136,17 @@
                   </HBox>
                </children>
             </VBox>
-            <Separator prefHeight="0.0" prefWidth="160.0" style="-fx-background-color: pink;" />
             <HBox alignment="CENTER" maxWidth="-Infinity" prefHeight="106.0" prefWidth="600.0" style="-fx-background-color: grey;">
                <children>
-                  <VBox alignment="CENTER" prefHeight="114.0" prefWidth="106.0">
-                     <HBox.margin>
-                        <Insets bottom="10.0" left="15.0" right="50.0" top="5.0" />
-                     </HBox.margin>
-                     <children>
-                        <ImageView fitHeight="76.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@Image/dinner-salad_4460x4460.jpg" />
-                           </image>
-                           <VBox.margin>
-                              <Insets />
-                           </VBox.margin>
-                        </ImageView>
-                        <Label />
-                        <Label prefHeight="17.0" prefWidth="96.0" text="Salade tisse" />
-                     </children>
-                  </VBox>
-                  <VBox alignment="CENTER" prefHeight="114.0" prefWidth="106.0">
-                     <HBox.margin>
-                        <Insets bottom="10.0" left="5.0" right="50.0" top="5.0" />
-                     </HBox.margin>
-                     <children>
-                        <ImageView fitHeight="60.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@Image/flame-broiled-steak_4460x4460.jpg" />
-                           </image>
-                        </ImageView>
-                        <Label prefHeight="17.0" prefWidth="103.0" text="viande rouge">
-                           <VBox.margin>
-                              <Insets top="15.0" />
-                           </VBox.margin>
-                        </Label>
-                     </children>
-                  </VBox>
-                  <VBox alignment="CENTER" prefHeight="114.0" prefWidth="106.0">
-                     <HBox.margin>
-                        <Insets bottom="10.0" left="5.0" right="30.0" top="5.0" />
-                     </HBox.margin>
-                     <children>
-                        <ImageView fitHeight="64.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@Image/fresh-poke-bowl-healthy-eating_4460x4460.jpg" />
-                           </image>
-                        </ImageView>
-                        <Label text="Salade luxe">
-                           <VBox.margin>
-                              <Insets top="15.0" />
-                           </VBox.margin>
-                        </Label>
-                     </children>
-                  </VBox>
+                  <ListView prefHeight="106.0" prefWidth="576.0" />
                   <VBox alignment="CENTER">
                      <HBox.margin>
                         <Insets top="5.0" />
                      </HBox.margin>
                      <children>
-                        <ImageView fitHeight="67.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@Image/healthy-dining-salads-wraps-and-bowls_4460x4460.jpg" />
-                           </image>
-                           <VBox.margin>
-                              <Insets />
-                           </VBox.margin>
-                        </ImageView>
-                        <Label text="taktouka">
-                           <VBox.margin>
-                              <Insets top="15.0" />
-                           </VBox.margin></Label>
+                        <ScrollBar orientation="VERTICAL" />
                      </children>
                   </VBox>
-                  <ScrollBar orientation="VERTICAL">
-                     <HBox.margin>
-                        <Insets left="48.0" />
-                     </HBox.margin>
-                  </ScrollBar>
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="27.0" prefWidth="600.0" style="-fx-background-color: grey;">
