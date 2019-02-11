@@ -11,7 +11,7 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception{
 
-        Parent root = FXMLLoader.load(getClass().getResource("../resources/fxml/polytech_home.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../resources/fxml/accueil.fxml"));
         //Parent root = FXMLLoader.load(getClass().getResource("../resources/fxml/sample.fxml"));
         Scene scene = new Scene(root, 600, 400);
         stage.setTitle("Hello JavaFX and Maven");
