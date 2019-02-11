@@ -2,8 +2,8 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
@@ -92,12 +92,12 @@
                               <TextField layoutX="296.0" layoutY="83.0" />
                               <TextField layoutX="296.0" layoutY="118.0" />
                               <TextField layoutX="296.0" layoutY="153.0" prefHeight="27.0" prefWidth="79.0" />
-                              <ListView layoutX="296.0" layoutY="49.0" prefHeight="26.0" prefWidth="166.0" />
                               <Label layoutX="142.0" layoutY="19.0" text="Nom de la recette" />
                               <Label layoutX="142.0" layoutY="54.0" text="Catégorie" />
                               <Label layoutX="142.0" layoutY="88.0" text="Prix max" />
                               <Label layoutX="142.0" layoutY="123.0" text="Calories" />
                               <Label layoutX="142.0" layoutY="158.0" text="Temps" />
+                              <ChoiceBox layoutX="296.0" layoutY="49.0" prefWidth="150.0" />
                            </children>
                         </AnchorPane>
                     </content>
