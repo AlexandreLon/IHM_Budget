@@ -5,8 +5,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import program.controller.Controller;
-import program.view.HomeView;
+import program.controller.ConnectionControler;
+import program.view.ConnectionView;
+import program.view.accueilView;
 
 public class Main extends Application {
 
@@ -16,23 +17,23 @@ public class Main extends Application {
         FXMLLoader loader = new FXMLLoader();
 
         //create a controller
-        Controller controller = new Controller();
+        ConnectionControler connController = new ConnectionControler();
 
         //attach controller
-        loader.setController(controller);
+        loader.setController(connController);
 
         //attach XML file
-        Parent root = loader.load(getClass().getResourceAsStream(HomeView.XML_FILE));
+        Parent root = loader.load(getClass().getResourceAsStream(ConnectionView.XML_FILE));
 
         //attach css file
-        root.getStylesheets().add(HomeView.CSS);
+        root.getStylesheets().add(ConnectionView.CSS);
 
         //initialize the controller
-        controller.init();
+        connController.init();
 
         //create the view
-        stage.setScene(new Scene(root, HomeView.WIDTH, HomeView.HEIGHT));
-        stage.setTitle(HomeView.LABEL);
+        stage.setScene(new Scene(root, ConnectionView.WIDTH, accueilView.HEIGHT));
+        stage.setTitle(accueilView.LABEL);
 
         //show the view
         stage.show();
