@@ -2,10 +2,8 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ScrollBar?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
@@ -28,11 +26,7 @@
                   <Insets right="8.0" />
                </HBox.margin>
             </ImageView>
-            <Label contentDisplay="CENTER" text="keylie balanci" textAlignment="CENTER">
-               <HBox.margin>
-                  <Insets right="10.0" />
-               </HBox.margin>
-            </Label>
+            <Hyperlink text="keylie balanci" />
          </children>
       </HBox>
    </top>
@@ -60,30 +54,14 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="26.0" prefWidth="601.0" style="-fx-background-color: grey;">
                <children>
-                  <MenuBar prefHeight="29.0" prefWidth="312.0">
-                    <menus>
-                      <Menu mnemonicParsing="false" text="Budget">
-                        <items>
-                          <MenuItem mnemonicParsing="false" text="Close" />
-                        </items>
-                      </Menu>
-                      <Menu mnemonicParsing="false" text=" Mes recettes ">
-                        <items>
-                          <MenuItem mnemonicParsing="false" text="Delete" />
-                        </items>
-                      </Menu>
-                      <Menu mnemonicParsing="false" text="Forum">
-                        <items>
-                          <MenuItem mnemonicParsing="false" text="About" />
-                        </items>
-                      </Menu>
-                        <Menu mnemonicParsing="false" text="Profile">
-                          <items>
-                            <MenuItem mnemonicParsing="false" text="Action 1" />
-                          </items>
-                        </Menu>
-                    </menus>
-                  </MenuBar>
+                  <HBox alignment="CENTER" prefHeight="26.0" prefWidth="601.0" style="-fx-background-color: grey;">
+                     <children>
+                        <Hyperlink text="Mon budget" />
+                        <Hyperlink text="Forum" />
+                        <Hyperlink />
+                        <Hyperlink text="Mes Recettes" />
+                     </children>
+                  </HBox>
                </children>
             </HBox>
             <VBox alignment="CENTER" prefHeight="117.0" prefWidth="600.0">
