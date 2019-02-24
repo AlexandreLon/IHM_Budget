@@ -7,7 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import program.controller.ConnectionControler;
 import program.view.ConnectionView;
-import program.view.accueilView;
+
 
 public class Main extends Application {
 
@@ -17,10 +17,10 @@ public class Main extends Application {
         FXMLLoader loader = new FXMLLoader();
 
         //create a controller
-        ConnectionControler connController = new ConnectionControler();
+        ConnectionControler Controller = new ConnectionControler();
 
         //attach controller
-        loader.setController(connController);
+        loader.setController(Controller);
 
         //attach XML file
         Parent root = loader.load(getClass().getResourceAsStream(ConnectionView.XML_FILE));
@@ -29,11 +29,11 @@ public class Main extends Application {
         root.getStylesheets().add(ConnectionView.CSS);
 
         //initialize the controller
-        connController.init();
+        Controller.init();
 
         //create the view
-        stage.setScene(new Scene(root, ConnectionView.WIDTH, accueilView.HEIGHT));
-        stage.setTitle(accueilView.LABEL);
+        stage.setScene(new Scene(root, ConnectionView.WIDTH, ConnectionView.HEIGHT));
+        stage.setTitle(ConnectionView.LABEL);
 
         //show the view
         stage.show();
