@@ -76,6 +76,24 @@ public abstract class Controller {
 
     }
 
+    public void redirectionToRecipe(String fxmlFile, Parent element)throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        try {
+            RecipeControler controler = new RecipeControler();
+            loader.setController(controler);
+            Stage stage=(Stage) element.getScene().getWindow();
+            Parent rootNode = loader.load(getClass().getResourceAsStream(fxmlFile));
+            rootNode.getStylesheets().add("/resources/styles/styles.css");
+            controler.init();
+            stage.setScene(new Scene(rootNode,800,600));
+            stage.setTitle("EAT WITH US");
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
 
 
 }

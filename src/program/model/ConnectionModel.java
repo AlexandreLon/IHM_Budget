@@ -37,8 +37,8 @@ public class ConnectionModel {
      */
     public boolean verify () {
 
-
-        return email.equals("admin@unice.fr") && pwd.equals("0000");
+        return true;
+//        return email.equals("admin@unice.fr") && pwd.equals("0000");
 
     }
 
