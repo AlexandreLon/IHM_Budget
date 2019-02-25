@@ -7,7 +7,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import program.model.CreateAccountModel;
 import program.view.ConnectionView;
-import program.view.accueilView;
+import program.view.AccueilView;
 import java.io.IOException;
 
 /**
@@ -73,7 +73,7 @@ public class CreateAccountControler extends Controller  {
 
         CreateAccountModel creatModel = new CreateAccountModel(nom.getText(),prenom.getText(),email.getText(),password.getText(),confirmPassword.getText());
         if(creatModel.verify()) {new Alert(Alert.AlertType.CONFIRMATION, "Account created with success\n WELCOME TO EAT WITH !!").show();
-            redirectionToAccueil(accueilView.XML_FILE,borderPane);}
+            redirectionToAccueil(AccueilView.XML_FILE,borderPane);}
         else  {new Alert(Alert.AlertType.ERROR, "Failed to create account:\n - Field are empty \n or \n - check your password ").show();}
 
     }
