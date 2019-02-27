@@ -1,34 +1,64 @@
 /* Application wide styles */
 
-.label {
-    -fx-font-size: 12px;
-    -fx-font-weight: bold;
-    -fx-text-fill: #333333;
-    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+
+
+
+* {
+    -fx-couleur1 : #2A2E37;
+    -fx-couleur2 : #FFFF8D;
+    -fx-couleur3: #B2B2B2;
+    -fx-text-fill: -fx-couleur3;
 }
 
+.root{
+    -fx-background-color: -fx-couleur1;
+
+}
+
+.buttonCo {
+    -fx-border-color: -fx-couleur2;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-background-color: -fx-couleur1;
+    -fx-text-alignment: center;
+    -fx-text-fill: -fx-couleur3;
+}
+
+
+.button :hover {
+    -fx-border-color : -fx-couleur2;
+    -fx-background-color: -fx-couleur2;
+    -fx-text-fill: -fx-couleur1;
+}
+
+#buttom {
+
+    -fx-border-color: grey -fx-couleur1 -fx-couleur1 -fx-couleur1 ;
+    -fx-border-whith: 0 px ;
+}
+
+#titre {
+    -fx-border-color: grey -fx-couleur1 grey -fx-couleur1;
+    -fx-border-width: 10px;
+
+}
+
+
+#label{
+    -fx-text-fill: -fx-couleur2;
+
+}
+
+.text-field {
+    -fx-background-color: -fx-text-box-border, -fx-background ;
+    -fx-background-insets: 0, 0 0 1 0 ;
+    -fx-background-radius: 0 ;
+}
+.text-field:focused {
+    -fx-background-color: -fx-focus-color, -fx-background ;
+}
 .button {
-    -fx-text-fill: white;
-    -fx-font-family: "Arial Narrow";
-    -fx-font-weight: bold;
-    -fx-background-color: linear-gradient(#61a2b1, #2A5058);
-    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+    /* buttons do not have rounded corners */
+    -fx-background-radius: 0;
+    -fx-label-padding: 0.3em 0.833333em 0.35em 0.833333em;
 }
-
-.button:hover{
-    -fx-base: #395bae;
-}
-
-/* Component specific styles */
-
-
-.main-panel {
-    -fx-background-image: url("../images/background.jpg");
-}
-
-.hello-message {
-    -fx-text-fill: #AA0000;
-    -fx-font-weight: bold;
-    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
-}
-
