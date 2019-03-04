@@ -6,8 +6,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import program.model.ConnectionModel;
-import program.view.HomeView;
-import program.view.CreateAccountView;
+import program.view.View;
+
 import java.io.IOException;
 
 /**
@@ -52,7 +52,7 @@ public class ConnectionControler extends Controller {
     public void valid(TextField email,TextField password)throws IOException {
 
         ConnectionModel connModel = new ConnectionModel(email.getText(),password.getText());
-       if(connModel.verify()) redirectionToAccueil(HomeView.XML_FILE,borderPane);
+       if(connModel.verify()) redirectionToAccueil(View.ACCUEIL,borderPane);
        else  {new Alert(Alert.AlertType.ERROR,"Failed to login  try with : \n e-mail :admin@unice.fr \n pwd :0000 ").show();}
 
     }
@@ -65,7 +65,7 @@ public class ConnectionControler extends Controller {
     public void init() {
         createAccount.setOnAction( event -> {
             try {
-                redirectionToCreateAccount(CreateAccountView.XML_FILE,borderPane);
+                redirectionToCreateAccount(View.CREATEACCOUNT,borderPane);
             } catch (IOException e) {
                 e.printStackTrace();
                 new Alert(Alert.AlertType.ERROR, "Failed to open FXML View!").show();

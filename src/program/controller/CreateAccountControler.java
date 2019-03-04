@@ -6,8 +6,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import program.model.CreateAccountModel;
-import program.view.ConnectionView;
-import program.view.HomeView;
+import program.view.View;
+
 import java.io.IOException;
 
 /**
@@ -73,7 +73,7 @@ public class CreateAccountControler extends Controller  {
 
         CreateAccountModel creatModel = new CreateAccountModel(nom.getText(),prenom.getText(),email.getText(),password.getText(),confirmPassword.getText());
         if(creatModel.verify()) {new Alert(Alert.AlertType.CONFIRMATION, "Account created with success\n WELCOME TO EAT WITH !!").show();
-            redirectionToAccueil(HomeView.XML_FILE,borderPane);}
+            redirectionToAccueil(View.ACCUEIL,borderPane);}
         else  {new Alert(Alert.AlertType.ERROR, "Failed to create account:\n - Field are empty \n or \n - check your password ").show();}
 
     }
@@ -88,7 +88,7 @@ public class CreateAccountControler extends Controller  {
         back.setOnAction( event -> {
             try {
 
-                redirectionToConnection(ConnectionView.XML_FILE,borderPane);
+                redirectionToConnection(View.CONNEXION,borderPane);
             } catch (IOException e) {
                 e.printStackTrace();
                 new Alert(Alert.AlertType.ERROR, "Failed to open FXML View!").show();

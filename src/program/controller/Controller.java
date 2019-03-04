@@ -31,7 +31,7 @@ public abstract class Controller {
             Parent rootNode = loader.load(getClass().getResourceAsStream(fxmlFile));
             rootNode.getStylesheets().add("/resources/styles/styles.css");
             controler.init();
-            stage.setScene(new Scene(rootNode,800,600));
+            stage.setScene(new Scene(rootNode,800,570));
             stage.setTitle("EAT WITH US");
             stage.show();
         } catch (IOException e) {
@@ -49,7 +49,7 @@ public abstract class Controller {
             Parent rootNode = loader.load(getClass().getResourceAsStream(fxmlFile));
             rootNode.getStylesheets().add("/resources/styles/styles.css");
             controler.init();
-            stage.setScene(new Scene(rootNode,800,600));
+            stage.setScene(new Scene(rootNode,800,570));
             stage.setTitle("EAT WITH US");
             stage.show();
         } catch (IOException e) {
@@ -67,7 +67,7 @@ public abstract class Controller {
             Parent rootNode = loader.load(getClass().getResourceAsStream(fxmlFile));
             rootNode.getStylesheets().add("/resources/styles/styles.css");
             controler.init();
-            stage.setScene(new Scene(rootNode,800,600));
+            stage.setScene(new Scene(rootNode,800,570));
             stage.setTitle("EAT WITH US");
             stage.show();
         } catch (IOException e) {
@@ -85,7 +85,7 @@ public abstract class Controller {
             Parent rootNode = loader.load(getClass().getResourceAsStream(fxmlFile));
             rootNode.getStylesheets().add("/resources/styles/styles.css");
             controler.init();
-            stage.setScene(new Scene(rootNode,800,600));
+            stage.setScene(new Scene(rootNode,800,570));
             stage.setTitle("EAT WITH US");
             stage.show();
         } catch (IOException e) {
