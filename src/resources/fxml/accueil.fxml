@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
@@ -14,9 +12,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <top>
-        <HBox alignment="CENTER_RIGHT" prefHeight="36.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+        <HBox fx:id="top" alignment="CENTER_RIGHT" prefHeight="36.0" prefWidth="600.0" BorderPane.alignment="CENTER">
             <children>
                 <Pane nodeOrientation="LEFT_TO_RIGHT" prefHeight="36.0" prefWidth="39.0" style="-fx-background-color: yellow;">
                     <HBox.margin>
@@ -38,7 +36,7 @@
         </HBox>
     </top>
     <bottom>
-        <HBox alignment="CENTER" prefHeight="41.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+        <HBox fx:id="buttom" alignment="CENTER" prefHeight="41.0" prefWidth="600.0" BorderPane.alignment="CENTER">
             <children>
                 <Label text="\@copyright by G5" />
             </children>
@@ -47,64 +45,120 @@
     <center>
         <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
             <children>
-                <HBox alignment="CENTER" prefHeight="31.0" prefWidth="600.0">
+                <HBox fx:id="titre" alignment="CENTER" prefHeight="71.0" prefWidth="600.0">
                     <children>
-                        <Label text="EAT WITH US" textFill="#f24507">
+                  <ImageView fitHeight="40.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true" />
+
+
+                        <Label fx:id="titre" text="EAT WITH US" textFill="#f24507">
                             <font>
                                 <Font name="System Bold" size="12.0" />
                             </font>
                         </Label>
                     </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
                 </HBox>
                 <HBox alignment="CENTER" prefHeight="37.0" prefWidth="600.0">
-                    <children>
-                        <MenuBar prefHeight="29.0" prefWidth="270.0" style="-fx-background-color: grey;">
-                            <menus>
-                                <Menu mnemonicParsing="false" text="Budget">
-                                    <items>
-                                        <MenuItem mnemonicParsing="false" text="Close" />
-                                    </items>
-                                </Menu>
-                                <Menu mnemonicParsing="false" text=" Mes recettes ">
-                                    <items>
-                                        <MenuItem fx:id="recipe" mnemonicParsing="false" text="Delete" />
-                                    </items>
-                                </Menu>
-                                <Menu mnemonicParsing="false" text="Forum">
-                                    <items>
-                                        <MenuItem mnemonicParsing="false" text="About" />
-                                    </items>
-                                </Menu>
-                                <Menu mnemonicParsing="false" text="Profile">
-                                    <items>
-                                        <MenuItem mnemonicParsing="false" text="Action 1" />
-                                    </items>
-                                </Menu>
-                            </menus>
-                        </MenuBar>
-                    </children>
+               <children>
+                  <HBox alignment="CENTER" prefHeight="26.0" prefWidth="601.0">
+                     <children>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Hyperlink text="Mon budget" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Hyperlink prefHeight="25.0" prefWidth="69.0" text="Forum" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Hyperlink fx:id="recipe" style="-fx-border-color: grey;" text="Mes Recettes" />
+                           </children>
+                        </HBox>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </HBox>
+               </children>
                 </HBox>
-                <BorderPane prefHeight="200.0" prefWidth="200.0">
-                    <center>
-                        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-                            <children>
-                                <Label layoutX="27.0" layoutY="172.0" prefHeight="17.0" prefWidth="118.0" text="Totale:       190e" />
-                                <Label layoutX="27.0" layoutY="199.0" text="Depense:   78e" />
-                                <Label layoutX="27.0" layoutY="228.0" prefHeight="17.0" prefWidth="91.0" text="Rest:           112e" />
-                                <Button alignment="CENTER" layoutX="469.0" layoutY="177.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="112.0" text="Graphique" textFill="#53ab0c">
-                                    <font>
-                                        <Font name="System Bold" size="12.0" />
-                                    </font>
-                                </Button>
-                                <Button layoutX="469.0" layoutY="216.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="113.0" text="Modifier budget" textFill="#53ab0c">
-                                    <font>
-                                        <Font name="System Bold" size="12.0" />
-                                    </font>
-                                </Button>
-                                <PieChart prefHeight="400.0" prefWidth="600.0" title="Budget" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="10.0" />
-                            </children>
-                        </AnchorPane>
-                    </center>
+                <BorderPane prefHeight="259.0" prefWidth="600.0">
+               <right>
+                  <VBox alignment="BOTTOM_RIGHT" prefHeight="200.0" prefWidth="142.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Button mnemonicParsing="false" prefHeight="36.0" prefWidth="113.0" text="Modifier budget" textFill="#53ab0c">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets right="5.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button alignment="CENTER" mnemonicParsing="false" prefHeight="39.0" prefWidth="112.0" text="Historique" textFill="#53ab0c">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="5.0" right="5.0" top="10.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                     <BorderPane.margin>
+                        <Insets />
+                     </BorderPane.margin>
+                  </VBox>
+               </right>
+               <left>
+                  <VBox alignment="BOTTOM_LEFT" prefHeight="132.0" prefWidth="127.0" style="-fx-background-color: #F1F2F6#F1F2F6;" styleClass="divelm" BorderPane.alignment="CENTER">
+                     <children>
+                        <HBox alignment="CENTER">
+                           <VBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </VBox.margin>
+                           <children>
+                              <Label prefHeight="28.0" prefWidth="177.0" text="Totale:       190e" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="23.0" prefWidth="163.0">
+                           <VBox.margin>
+                              <Insets left="5.0" />
+                           </VBox.margin>
+                           <children>
+                              <HBox>
+                                 <children>
+                                    <Label prefHeight="23.0" prefWidth="169.0" text="Depense:   78e" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+                        <HBox>
+                           <VBox.margin>
+                              <Insets left="5.0" />
+                           </VBox.margin>
+                           <children>
+                              <HBox>
+                                 <children>
+                                    <Label prefHeight="21.0" prefWidth="218.0" text="Reste:           112e" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <BorderPane.margin>
+                        <Insets />
+                     </BorderPane.margin>
+                  </VBox>
+               </left>
+               <center>
+                  <AnchorPane prefHeight="243.0" prefWidth="384.0" BorderPane.alignment="CENTER" />
+               </center>
                 </BorderPane>
             </children>
         </VBox>
