@@ -1,6 +1,6 @@
 package program.view;
 
-public class AccueilView
+public class HomeView
 {
     public static final String CSS = "/resources/styles/styles.css";
     public static final String LABEL = "Eat With Us";

@@ -43,7 +43,7 @@ public abstract class Controller {
     public void redirectionToAccueil(String fxmlFile, Parent element)throws IOException {
         FXMLLoader loader = new FXMLLoader();
         try {
-            AccueilControler controler =new AccueilControler();
+            HomeController controler =new HomeController();
             loader.setController(controler);
             Stage stage=(Stage) element.getScene().getWindow();
             Parent rootNode = loader.load(getClass().getResourceAsStream(fxmlFile));
@@ -76,10 +76,10 @@ public abstract class Controller {
 
     }
 
-    public void redirectionToRecipe(String fxmlFile, Parent element)throws IOException {
+    public void redirectionToBudget(String fxmlFile, Parent element)throws IOException {
         FXMLLoader loader = new FXMLLoader();
         try {
-            RecipeControler controler = new RecipeControler();
+            BudgetController controler = new BudgetController();
             loader.setController(controler);
             Stage stage=(Stage) element.getScene().getWindow();
             Parent rootNode = loader.load(getClass().getResourceAsStream(fxmlFile));

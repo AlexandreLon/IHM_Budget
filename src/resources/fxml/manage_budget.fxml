@@ -21,7 +21,7 @@
                <children>
                   <ImageView fitHeight="40.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@Image/business-woman-with-wool-hat_4460x4460.jpg" />
+                        <Image url="/resources/images/business-woman-with-wool-hat_4460x4460.jpg" />
                      </image>
                      <HBox.margin>
                         <Insets right="8.0" />

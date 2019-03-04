@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<HBox xmlns:fx="http://javafx.com/fxml" fx:id="hBox">
+    <children>
+        <!--<ImageView fx:id="image" fitHeight="40.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">-->
+        <!--</ImageView>-->
+        <VBox alignment="CENTER" prefHeight="16.0" prefWidth="31.0" xmlns:fx="http://javafx.com/fxml">
+            <Label fx:id="value"/>
+        </VBox>
+        <VBox alignment="CENTER" prefHeight="16.0" prefWidth="81.0" xmlns:fx="http://javafx.com/fxml">
+            <Label fx:id="description"/>
+        </VBox>
+        <VBox alignment="CENTER" prefHeight="16.0" xmlns:fx="http://javafx.com/fxml">
+            <Label fx:id="date"/>
+        </VBox>
+    </children>
+</HBox>

@@ -7,23 +7,24 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
-import program.model.MenuModel;
+import program.model.SpentModel;
 
 import java.io.IOException;
 
-public class MenuController
+public class SpentController
 {
-
     @FXML
     private HBox hBox;
     @FXML
-    private Label label;
+    private Label value;
     @FXML
-    private ImageView image;
+    private Label description;
+    @FXML
+    private Label date;
 
-    public MenuController()
+    public SpentController()
     {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/resources/fxml/menu.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/resources/fxml/spent.fxml"));
         fxmlLoader.setController(this);
         try
         {
@@ -36,10 +37,11 @@ public class MenuController
 
     }
 
-    public void setInfo(MenuModel menu)
+    public void setInfo(SpentModel spent)
     {
-        label.setText(menu.getName());
-        image.setImage(new Image(menu.getImage()));
+        value.setText(Integer.toString(spent.getValue()));
+        description.setText(spent.getDescription());
+        date.setText(spent.getDate());
     }
 
     public Node getBox()

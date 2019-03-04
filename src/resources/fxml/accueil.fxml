@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
     <top>
         <HBox fx:id="top" alignment="CENTER_RIGHT" prefHeight="36.0" prefWidth="600.0" BorderPane.alignment="CENTER">
             <children>
@@ -45,7 +45,7 @@
     <center>
         <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
             <children>
-                <HBox fx:id="titre" alignment="CENTER" prefHeight="71.0" prefWidth="600.0">
+                <HBox alignment="CENTER" prefHeight="71.0" prefWidth="600.0">
                     <children>
                   <ImageView fitHeight="40.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true" />
 
@@ -66,7 +66,7 @@
                      <children>
                         <HBox alignment="CENTER">
                            <children>
-                              <Hyperlink text="Mon budget" />
+                              <Hyperlink fx:id="budget" text="Mon budget" />
                            </children>
                         </HBox>
                         <HBox alignment="CENTER">
