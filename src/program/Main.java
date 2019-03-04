@@ -6,7 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import program.controller.ConnectionControler;
-import program.view.ConnectionView;
+import program.view.View;
 
 
 public class Main extends Application {
@@ -23,17 +23,17 @@ public class Main extends Application {
         loader.setController(Controller);
 
         //attach XML file
-        Parent root = loader.load(getClass().getResourceAsStream(ConnectionView.XML_FILE));
+        Parent root = loader.load(getClass().getResourceAsStream(View.CONNEXION));
 
         //attach css file
-        root.getStylesheets().add(ConnectionView.CSS);
+        root.getStylesheets().add("/resources/styles/styles.css");
 
         //initialize the controller
         Controller.init();
 
         //create the view
-        stage.setScene(new Scene(root, ConnectionView.WIDTH, ConnectionView.HEIGHT));
-        stage.setTitle(ConnectionView.LABEL);
+        stage.setScene(new Scene(root, 800, 570));
+        stage.setTitle("Connexion");
 
         //show the view
         stage.show();

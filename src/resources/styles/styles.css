@@ -7,12 +7,11 @@
     -fx-couleur1 : #2A2E37;
     -fx-couleur2 : #FFFF8D;
     -fx-couleur3: #B2B2B2;
-    -fx-text-fill: -fx-couleur3;
+
 }
 
-.root{
-    -fx-background-color: -fx-couleur1;
-
+.root {
+    -fx-background-image: url("/resources/images/abc.jpg");
 }
 
 .buttonCo {
@@ -31,23 +30,21 @@
     -fx-text-fill: -fx-couleur1;
 }
 
-#buttom {
 
-    -fx-border-color: grey -fx-couleur1 -fx-couleur1 -fx-couleur1 ;
-    -fx-border-whith: 0 px ;
-}
+#aa{
+    -fx-text-fill: #000000;
 
-#titre {
-    -fx-border-color: grey -fx-couleur1 grey -fx-couleur1;
-    -fx-border-width: 10px;
+
+    -fx-font-size: 20px;
 
 }
-
-
-#label{
-    -fx-text-fill: -fx-couleur2;
-
+.hyperlink:{
+    -fx-text-fill: #000000;
+    -fx-font-size: 20px;
 }
+
+.VBox{ -fx-border-color: #2A2E37;}
+
 
 .text-field {
     -fx-background-color: -fx-text-box-border, -fx-background ;
@@ -57,8 +54,46 @@
 .text-field:focused {
     -fx-background-color: -fx-focus-color, -fx-background ;
 }
+
+.button:hover {
+    -fx-background-color: linear-gradient(#2A5058, #61a2b1);
+}
+label{
+    -fx-background-color:#B2B2B2;
+}
+.text-field{
+   -fx-font-family: "Quicksand";
+   -fx-font-size: 18;
+   -fx-padding: 1,1,1,1;
+   -fx-border-color: grey;
+   -fx-border-width: 2;
+   -fx-border-radius: 1;
+   -fx-border: gone;
+   -fx-background-color: transparent;
+   -fx-text-fill: black;
+}
 .button {
-    /* buttons do not have rounded corners */
-    -fx-background-radius: 0;
-    -fx-label-padding: 0.3em 0.833333em 0.35em 0.833333em;
+    -fx-text-fill: white;
+    -fx-font-family: "Arial Narrow";
+    -fx-font-weight: bold;
+    -fx-background-color: linear-gradient(#61a2b1, #2A5058);
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+.menue{
+-fx-text-fill: #4F6168;
+-fx-font-weight: bold;
+-fx-font-size: 20px;
+
+}
+
+.divelm{
+
+-fx-text-fill: #4F6168;
+-fx-font-weight: bold;
+-fx-font-size: 20px;
+
+}
+#accueil{
+
+-fx-background-image: url("/resources/images/aba.jpg");
 }

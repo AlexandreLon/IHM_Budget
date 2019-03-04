@@ -4,7 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.layout.BorderPane;
-import program.view.BudgetView;
+import program.view.View;
 
 import java.io.IOException;
 
@@ -26,7 +26,7 @@ public class HomeController extends Controller {
         budget.setOnAction( event -> {
             try {
 
-                redirectionToBudget(BudgetView.XML_FILE,borderPane);
+                redirectionToBudget(View.HISTORY,borderPane);
             } catch (IOException e) {
                 e.printStackTrace();
                 new Alert(Alert.AlertType.ERROR, "Failed to open FXML View!").show();
