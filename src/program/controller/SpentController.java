@@ -20,6 +20,9 @@ class SpentController
     @FXML
     private Label date;
 
+    /**
+     * Controller constructor
+     */
     SpentController()
     {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/resources/fxml/Spent.fxml"));
@@ -34,6 +37,10 @@ class SpentController
 
     }
 
+    /**
+     * Update information in widget page with model
+     * @param spent to update it
+     */
     void setInfo(SpentModel spent)
     {
         value.setText(Integer.toString(spent.getValue()));
@@ -41,6 +48,10 @@ class SpentController
         date.setText(spent.getDate());
     }
 
+    /**
+     * It's necessary to get for Controller
+     * @return
+     */
     Node getBox()
     {
         return hBox;

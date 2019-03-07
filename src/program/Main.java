@@ -12,6 +12,11 @@ import program.view.View;
 public class Main extends Application
 {
 
+    /**
+     * The main entry point for all JavaFX applications.
+     * @param stage (Useful to create window JavaFX)
+     * @throws Exception Exception if page creating it's impossible
+     */
     @Override
     public void start(Stage stage) throws Exception
     {
@@ -30,6 +35,10 @@ public class Main extends Application
     }
 
 
+    /**
+     * Start methods
+     * @param args Argument app
+     */
     public static void main(String[] args)
     {
         launch(args);

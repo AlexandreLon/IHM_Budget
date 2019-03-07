@@ -86,7 +86,7 @@ class CreateAccountController extends Controller
     }
 
 
-    void init()
+    protected void init()
     {
         back.setOnAction(event ->
         {

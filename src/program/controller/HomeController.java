@@ -22,7 +22,7 @@ class HomeController extends Controller
     @FXML
     private BorderPane borderPane;
 
-    void init()
+    protected void init()
     {
         budget.setOnAction(event ->
         {

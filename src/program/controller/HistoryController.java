@@ -18,7 +18,7 @@ class HistoryController extends Controller
     private Set<SpentModel> stringSet = new TreeSet<>();
     private ObservableList observableList = FXCollections.observableArrayList();
 
-    void init()
+    protected void init()
     {
         stringSet.add(new SpentModel());
         stringSet.add(new SpentModel());
