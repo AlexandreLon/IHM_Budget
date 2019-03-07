@@ -6,25 +6,19 @@ import javafx.fxml.FXML;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.util.Callback;
+import program.model.HistoryModel;
 import program.model.SpentModel;
-
-import java.util.Set;
-import java.util.TreeSet;
 
 class HistoryController extends Controller
 {
     @FXML
     private ListView listView;
-    private Set<SpentModel> stringSet = new TreeSet<>();
+    private HistoryModel historyModel = new HistoryModel();
     private ObservableList observableList = FXCollections.observableArrayList();
 
     protected void init()
     {
-        stringSet.add(new SpentModel());
-        stringSet.add(new SpentModel());
-        stringSet.add(new SpentModel());
-        stringSet.add(new SpentModel());
-        observableList.setAll(stringSet);
+        observableList.setAll(historyModel.getSpentList());
         listView.setItems(observableList);
         listView.setCellFactory((Callback<ListView<String>, ListCell>) listView -> new ListCell<SpentModel>()
         {
