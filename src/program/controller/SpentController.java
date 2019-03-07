@@ -4,14 +4,12 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import program.model.SpentModel;
 
 import java.io.IOException;
 
-public class SpentController
+class SpentController
 {
     @FXML
     private HBox hBox;
@@ -22,29 +20,28 @@ public class SpentController
     @FXML
     private Label date;
 
-    public SpentController()
+    SpentController()
     {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/resources/fxml/Spent.fxml"));
         fxmlLoader.setController(this);
         try
         {
             fxmlLoader.load();
-        }
-        catch (IOException e)
+        } catch (IOException e)
         {
             throw new RuntimeException(e);
         }
 
     }
 
-    public void setInfo(SpentModel spent)
+    void setInfo(SpentModel spent)
     {
         value.setText(Integer.toString(spent.getValue()));
         description.setText(spent.getDescription());
         date.setText(spent.getDate());
     }
 
-    public Node getBox()
+    Node getBox()
     {
         return hBox;
     }

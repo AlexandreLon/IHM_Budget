@@ -8,18 +8,17 @@ import javafx.scene.control.ListView;
 import javafx.util.Callback;
 import program.model.SpentModel;
 
-import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class BudgetController
+class BudgetController
 {
     @FXML
     private ListView listView;
     private Set<SpentModel> stringSet = new TreeSet<>();
-    ObservableList observableList = FXCollections.observableArrayList();
+    private ObservableList observableList = FXCollections.observableArrayList();
 
-    public void init()
+    void init()
     {
         stringSet.add(new SpentModel());
         stringSet.add(new SpentModel());
@@ -32,8 +31,8 @@ public class BudgetController
             @Override
             public void updateItem(SpentModel menuModel, boolean empty)
             {
-                super.updateItem(menuModel,empty);
-                if(menuModel != null)
+                super.updateItem(menuModel, empty);
+                if (menuModel != null)
                 {
                     SpentController menu = new SpentController();
                     menu.setInfo(menuModel);

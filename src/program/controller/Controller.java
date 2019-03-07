@@ -4,6 +4,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+
 import java.io.IOException;
 
 /**
@@ -13,87 +14,72 @@ import java.io.IOException;
  * @version 2019.02.24
  */
 
-public abstract class Controller {
+abstract class Controller
+{
 
 
     /**
      * redirect to new view
-     * @param fxmlFile the path of the new view
+     *
      * @param element parent element 'borderPane'
      */
 
-    public void redirectionToCreateAccount(String fxmlFile, Parent element)throws IOException {
+    void redirectionToCreateAccount(Parent element) throws IOException
+    {
         FXMLLoader loader = new FXMLLoader();
-        try {
-            CreateAccountControler controler =new CreateAccountControler();
-            loader.setController(controler);
-            Stage stage=(Stage) element.getScene().getWindow();
-            Parent rootNode = loader.load(getClass().getResourceAsStream(fxmlFile));
-            rootNode.getStylesheets().add("/resources/styles/styles.css");
-            controler.init();
-            stage.setScene(new Scene(rootNode,800,570));
-            stage.setTitle("EAT WITH US");
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
+        CreateAccountControler controler = new CreateAccountControler();
+        loader.setController(controler);
+        Stage stage = (Stage) element.getScene().getWindow();
+        Parent rootNode = loader.load(getClass().getResourceAsStream(program.view.View.CREATEACCOUNT));
+        rootNode.getStylesheets().add("/resources/styles/styles.css");
+        controler.init();
+        stage.setScene(new Scene(rootNode, 800, 570));
+        stage.setTitle("EAT WITH US");
+        stage.show();
     }
 
-    public void redirectionToAccueil(String fxmlFile, Parent element)throws IOException {
+    void redirectionToAccueil(Parent element) throws IOException
+    {
         FXMLLoader loader = new FXMLLoader();
-        try {
-            HomeController controler =new HomeController();
-            loader.setController(controler);
-            Stage stage=(Stage) element.getScene().getWindow();
-            Parent rootNode = loader.load(getClass().getResourceAsStream(fxmlFile));
-            rootNode.getStylesheets().add("/resources/styles/styles.css");
-            controler.init();
-            stage.setScene(new Scene(rootNode,800,570));
-            stage.setTitle("EAT WITH US");
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
+        HomeController controller = new HomeController();
+        loader.setController(controller);
+        Stage stage = (Stage) element.getScene().getWindow();
+        Parent rootNode = loader.load(getClass().getResourceAsStream(program.view.View.HOME));
+        rootNode.getStylesheets().add("/resources/styles/styles.css");
+        controller.init();
+        stage.setScene(new Scene(rootNode, 800, 570));
+        stage.setTitle("EAT WITH US");
+        stage.show();
     }
 
-    public void redirectionToConnection(String fxmlFile, Parent element)throws IOException {
+    void redirectionToConnection(Parent element) throws IOException
+    {
         FXMLLoader loader = new FXMLLoader();
-        try {
-            ConnectionControler controler = new ConnectionControler();
-            loader.setController(controler);
-            Stage stage=(Stage) element.getScene().getWindow();
-            Parent rootNode = loader.load(getClass().getResourceAsStream(fxmlFile));
-            rootNode.getStylesheets().add("/resources/styles/styles.css");
-            controler.init();
-            stage.setScene(new Scene(rootNode,800,570));
-            stage.setTitle("EAT WITH US");
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
+        ConnectionControler controller = new ConnectionControler();
+        loader.setController(controller);
+        Stage stage = (Stage) element.getScene().getWindow();
+        Parent rootNode = loader.load(getClass().getResourceAsStream(program.view.View.CONNECTION));
+        rootNode.getStylesheets().add("/resources/styles/styles.css");
+        controller.init();
+        stage.setScene(new Scene(rootNode, 800, 570));
+        stage.setTitle("EAT WITH US");
+        stage.show();
     }
 
-    public void redirectionToBudget(String fxmlFile, Parent element)throws IOException {
+    void redirectionToBudget(Parent element) throws IOException
+    {
         FXMLLoader loader = new FXMLLoader();
-        try {
-            BudgetController controler = new BudgetController();
-            loader.setController(controler);
-            Stage stage=(Stage) element.getScene().getWindow();
-            Parent rootNode = loader.load(getClass().getResourceAsStream(fxmlFile));
-            rootNode.getStylesheets().add("/resources/styles/styles.css");
-            controler.init();
-            stage.setScene(new Scene(rootNode,800,570));
-            stage.setTitle("EAT WITH US");
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        BudgetController controller = new BudgetController();
+        loader.setController(controller);
+        Stage stage = (Stage) element.getScene().getWindow();
+        Parent rootNode = loader.load(getClass().getResourceAsStream(program.view.View.HISTORY));
+        rootNode.getStylesheets().add("/resources/styles/styles.css");
+        controller.init();
+        stage.setScene(new Scene(rootNode, 800, 570));
+        stage.setTitle("EAT WITH US");
+        stage.show();
 
     }
-
 
 
 }

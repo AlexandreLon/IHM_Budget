@@ -8,7 +8,8 @@ package program.model;
  * @version 2019.02.24
  */
 
-public class ConnectionModel {
+public class ConnectionModel
+{
 
     /**
      * user email
@@ -22,28 +23,26 @@ public class ConnectionModel {
 
     /**
      * constructor
+     *
      * @param email user mail
-     * @param pwd user password
-
+     * @param pwd   user password
      */
-    public ConnectionModel(String email, String  pwd) {
+    public ConnectionModel(String email, String pwd)
+    {
         this.email = email;
         this.pwd = pwd;
     }
 
     /**
-     *
      * @return True if email and pwd are correct
      */
-    public boolean verify () {
+    public boolean verify()
+    {
 
         return true;
 //        return email.equals("admin@unice.fr") && pwd.equals("0000");
 
     }
-
-
-
 
 
 }

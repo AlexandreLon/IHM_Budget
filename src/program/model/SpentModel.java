@@ -1,19 +1,11 @@
 package program.model;
 
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
 
 public class SpentModel implements Comparable<SpentModel>
 {
-
-    public static enum FilterSpent
-    {
-        MONTH,
-        WEEK,
-        DAY
-    }
 
     private int value;
     private String description;
@@ -41,26 +33,6 @@ public class SpentModel implements Comparable<SpentModel>
         return description;
     }
 
-    public boolean isSpent()
-    {
-        return isSpent;
-    }
-
-    public boolean isPrintable(FilterSpent filter)
-    {
-        switch (filter)
-        {
-            case MONTH:
-
-                break;
-            case WEEK:
-                break;
-            case DAY:
-                break;
-        }
-        return false;
-    }
-
     public int getValue()
     {
         return value;
@@ -76,6 +48,6 @@ public class SpentModel implements Comparable<SpentModel>
     @Override
     public int compareTo(SpentModel o)
     {
-        return (int)(o.date - this.date);
+        return (int) (o.date - this.date);
     }
 }
