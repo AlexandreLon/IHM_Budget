@@ -39,7 +39,7 @@ public class SpentModel implements Comparable<SpentModel>
      * @param isSpent
      * @param date
      */
-    private SpentModel(int value, String description, boolean isSpent, long date)
+    SpentModel(int value, String description, boolean isSpent, long date)
     {
         this.value = value;
         this.description = description;
