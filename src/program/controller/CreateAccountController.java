@@ -77,7 +77,7 @@ class CreateAccountControler extends Controller
         if (creatModel.verify())
         {
             new Alert(Alert.AlertType.CONFIRMATION, "Account created with success\n WELCOME TO EAT WITH !!").show();
-            redirectionToAccueil(borderPane);
+            redirectionToHome(borderPane);
         } else
         {
             new Alert(Alert.AlertType.ERROR, "Failed to create account:\n - Field are empty \n or \n - check your password ").show();

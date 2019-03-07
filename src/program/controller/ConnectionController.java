@@ -54,7 +54,7 @@ public class ConnectionControler extends Controller
     {
 
         ConnectionModel connModel = new ConnectionModel(email.getText(), password.getText());
-        if (connModel.verify()) redirectionToAccueil(borderPane);
+        if (connModel.verify()) redirectionToHome(borderPane);
         else
         {
             new Alert(Alert.AlertType.ERROR, "Failed to login  try with : \n e-mail :admin@unice.fr \n pwd :0000 ").show();
