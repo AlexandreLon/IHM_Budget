@@ -4,6 +4,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import program.view.View;
 
 import java.io.IOException;
 
@@ -17,6 +18,20 @@ import java.io.IOException;
 abstract class Controller
 {
 
+    void redirectionTo(Parent element, String target, Controller controller) throws IOException
+    {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setController(controller);
+        Stage stage = (Stage) element.getScene().getWindow();
+        Parent rootNode = loader.load(getClass().getResourceAsStream(target));
+        rootNode.getStylesheets().add("/resources/styles/styles.css");
+        controller.init();
+        stage.setScene(new Scene(rootNode, 800, 570));
+        stage.setTitle("EAT WITH US");
+        stage.show();
+    }
+
+    protected abstract void init();
 
     /**
      * redirect to new view
@@ -26,58 +41,22 @@ abstract class Controller
 
     void redirectionToCreateAccount(Parent element) throws IOException
     {
-        FXMLLoader loader = new FXMLLoader();
-        CreateAccountControler controler = new CreateAccountControler();
-        loader.setController(controler);
-        Stage stage = (Stage) element.getScene().getWindow();
-        Parent rootNode = loader.load(getClass().getResourceAsStream(program.view.View.CREATEACCOUNT));
-        rootNode.getStylesheets().add("/resources/styles/styles.css");
-        controler.init();
-        stage.setScene(new Scene(rootNode, 800, 570));
-        stage.setTitle("EAT WITH US");
-        stage.show();
+        redirectionTo(element, View.CREATEACCOUNT, new CreateAccountController());
     }
 
-    void redirectionToAccueil(Parent element) throws IOException
+    void redirectionToHome(Parent element) throws IOException
     {
-        FXMLLoader loader = new FXMLLoader();
-        HomeController controller = new HomeController();
-        loader.setController(controller);
-        Stage stage = (Stage) element.getScene().getWindow();
-        Parent rootNode = loader.load(getClass().getResourceAsStream(program.view.View.HOME));
-        rootNode.getStylesheets().add("/resources/styles/styles.css");
-        controller.init();
-        stage.setScene(new Scene(rootNode, 800, 570));
-        stage.setTitle("EAT WITH US");
-        stage.show();
+        redirectionTo(element, View.HOME, new HomeController());
     }
 
     void redirectionToConnection(Parent element) throws IOException
     {
-        FXMLLoader loader = new FXMLLoader();
-        ConnectionControler controller = new ConnectionControler();
-        loader.setController(controller);
-        Stage stage = (Stage) element.getScene().getWindow();
-        Parent rootNode = loader.load(getClass().getResourceAsStream(program.view.View.CONNECTION));
-        rootNode.getStylesheets().add("/resources/styles/styles.css");
-        controller.init();
-        stage.setScene(new Scene(rootNode, 800, 570));
-        stage.setTitle("EAT WITH US");
-        stage.show();
+        redirectionTo(element, View.CONNECTION, new ConnectionController());
     }
 
-    void redirectionToBudget(Parent element) throws IOException
+    void redirectionToHistory(Parent element) throws IOException
     {
-        FXMLLoader loader = new FXMLLoader();
-        BudgetController controller = new BudgetController();
-        loader.setController(controller);
-        Stage stage = (Stage) element.getScene().getWindow();
-        Parent rootNode = loader.load(getClass().getResourceAsStream(program.view.View.HISTORY));
-        rootNode.getStylesheets().add("/resources/styles/styles.css");
-        controller.init();
-        stage.setScene(new Scene(rootNode, 800, 570));
-        stage.setTitle("EAT WITH US");
-        stage.show();
+        redirectionTo(element, View.HISTORY, new HistoryController());
 
     }
 

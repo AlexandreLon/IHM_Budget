@@ -5,7 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import program.controller.ConnectionControler;
+import program.controller.ConnectionController;
 import program.view.View;
 
 
@@ -17,7 +17,7 @@ public class Main extends Application
     {
 
         FXMLLoader loader = new FXMLLoader();
-        ConnectionControler Controller = new ConnectionControler();
+        ConnectionController Controller = new ConnectionController();
         loader.setController(Controller);
         Parent root = loader.load(getClass().getResourceAsStream(View.CONNECTION));
         root.getStylesheets().add("/resources/styles/styles.css");

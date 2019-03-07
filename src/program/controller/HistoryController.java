@@ -11,7 +11,7 @@ import program.model.SpentModel;
 import java.util.Set;
 import java.util.TreeSet;
 
-class BudgetController extends Controller
+class HistoryController extends Controller
 {
     @FXML
     private ListView listView;

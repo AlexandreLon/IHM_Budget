@@ -17,7 +17,7 @@ import java.io.IOException;
  */
 
 
-class CreateAccountControler extends Controller
+class CreateAccountController extends Controller
 {
 
     /**

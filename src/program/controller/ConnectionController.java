@@ -15,7 +15,7 @@ import java.io.IOException;
  * @author G5
  * @version 2019.02.24
  */
-public class ConnectionControler extends Controller
+public class ConnectionController extends Controller
 {
 
     /**

@@ -29,7 +29,7 @@ class HomeController extends Controller
             try
             {
 
-                redirectionToBudget(borderPane);
+                redirectionToHistory(borderPane);
             } catch (IOException e)
             {
                 e.printStackTrace();
