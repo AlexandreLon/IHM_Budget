@@ -73,7 +73,7 @@ public class CreateAccountControler extends Controller  {
 
         CreateAccountModel creatModel = new CreateAccountModel(nom.getText(),prenom.getText(),email.getText(),password.getText(),confirmPassword.getText());
         if(creatModel.verify()) {new Alert(Alert.AlertType.CONFIRMATION, "Account created with success\n WELCOME TO EAT WITH !!").show();
-            redirectionToAccueil(View.ACCUEIL,borderPane);}
+            redirectionToAccueil(View.HOME,borderPane);}
         else  {new Alert(Alert.AlertType.ERROR, "Failed to create account:\n - Field are empty \n or \n - check your password ").show();}
 
     }
@@ -88,7 +88,7 @@ public class CreateAccountControler extends Controller  {
         back.setOnAction( event -> {
             try {
 
-                redirectionToConnection(View.CONNEXION,borderPane);
+                redirectionToConnection(View.CONNECTION,borderPane);
             } catch (IOException e) {
                 e.printStackTrace();
                 new Alert(Alert.AlertType.ERROR, "Failed to open FXML View!").show();

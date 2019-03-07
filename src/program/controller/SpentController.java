@@ -24,7 +24,7 @@ public class SpentController
 
     public SpentController()
     {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/resources/fxml/spent.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/resources/fxml/Spent.fxml"));
         fxmlLoader.setController(this);
         try
         {

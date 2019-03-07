@@ -52,7 +52,7 @@ public class ConnectionControler extends Controller {
     public void valid(TextField email,TextField password)throws IOException {
 
         ConnectionModel connModel = new ConnectionModel(email.getText(),password.getText());
-       if(connModel.verify()) redirectionToAccueil(View.ACCUEIL,borderPane);
+       if(connModel.verify()) redirectionToAccueil(View.HOME,borderPane);
        else  {new Alert(Alert.AlertType.ERROR,"Failed to login  try with : \n e-mail :admin@unice.fr \n pwd :0000 ").show();}
 
     }

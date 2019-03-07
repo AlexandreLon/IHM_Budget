@@ -51,6 +51,7 @@ public class SpentModel implements Comparable<SpentModel>
         switch (filter)
         {
             case MONTH:
+
                 break;
             case WEEK:
                 break;

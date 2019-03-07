@@ -23,7 +23,7 @@ public class Main extends Application {
         loader.setController(Controller);
 
         //attach XML file
-        Parent root = loader.load(getClass().getResourceAsStream(View.CONNEXION));
+        Parent root = loader.load(getClass().getResourceAsStream(View.CONNECTION));
 
         //attach css file
         root.getStylesheets().add("/resources/styles/styles.css");
