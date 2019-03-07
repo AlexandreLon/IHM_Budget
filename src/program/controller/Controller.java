@@ -18,7 +18,7 @@ import java.io.IOException;
 abstract class Controller
 {
 
-    void redirectionTo(Parent element, String target, Controller controller) throws IOException
+    private void redirectionTo(Parent element, String target, Controller controller) throws IOException
     {
         FXMLLoader loader = new FXMLLoader();
         loader.setController(controller);

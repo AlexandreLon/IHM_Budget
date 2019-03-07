@@ -27,7 +27,7 @@ public class SpentModel implements Comparable<SpentModel>
     /**
      * Generate random spent
      */
-    public SpentModel()
+    SpentModel()
     {
         this(new Random().nextInt(200), "Random", new Random().nextBoolean(), System.currentTimeMillis());
     }
@@ -39,7 +39,7 @@ public class SpentModel implements Comparable<SpentModel>
      * @param isSpent
      * @param date
      */
-    public SpentModel(int value, String description, boolean isSpent, long date)
+    private SpentModel(int value, String description, boolean isSpent, long date)
     {
         this.value = value;
         this.description = description;
