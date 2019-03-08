@@ -21,7 +21,7 @@ import java.io.IOException;
 public class HomeController extends Controller {
 
     @FXML
-    private Hyperlink budget;
+    private Button budget;
     @FXML
     private  Hyperlink recipe;
     @FXML
@@ -38,6 +38,13 @@ public class HomeController extends Controller {
 
     @FXML
     private PieChart pieChart;
+
+    @FXML
+    private Hyperlink Alerte1;
+
+    @FXML
+    private Hyperlink Alerte2;
+
 
     public void show(int budget,int ceiling) {
             ObservableList<PieChart.Data> pieChartData
@@ -82,6 +89,15 @@ public class HomeController extends Controller {
                 new Alert(Alert.AlertType.ERROR, "Failed to open FXML View!").show();
             }
         });
+        Alerte1.setOnAction(event -> {
+                new Alert(Alert.AlertType.INFORMATION, "La page Forum est en maintenance").show();
+        });
+
+        Alerte2.setOnAction(event -> {
+            new Alert(Alert.AlertType.INFORMATION, "La page Mes recettes est en maintenance").show();
+        });
+
+
 
     }
 

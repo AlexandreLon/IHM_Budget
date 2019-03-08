@@ -4,29 +4,28 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
    <top>
       <HBox alignment="CENTER_RIGHT" prefHeight="36.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <Pane nodeOrientation="LEFT_TO_RIGHT" prefHeight="36.0" prefWidth="39.0" style="-fx-background-color: yellow;">
+            <ImageView fitHeight="46.0" fitWidth="57.0" layoutX="56.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="resources/images/ImageProfil.jpg" />
+
+               </image>
                <HBox.margin>
                   <Insets right="10.0" />
                </HBox.margin>
-               <padding>
-                  <Insets top="10.0" />
-               </padding>
-               <opaqueInsets>
-                  <Insets top="5.0" />
-               </opaqueInsets>
-            </Pane>
-            <Label contentDisplay="CENTER" text="Youssef Bal" textAlignment="CENTER">
+            </ImageView>
+            <Label contentDisplay="CENTER" text="Alice Duboi" textAlignment="CENTER">
                <HBox.margin>
                   <Insets right="10.0" />
                </HBox.margin>
@@ -44,13 +43,17 @@
    <center>
       <VBox alignment="CENTER" prefHeight="325.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <HBox alignment="CENTER" prefHeight="31.0" prefWidth="600.0">
+            <HBox alignment="TOP_CENTER" prefHeight="31.0" prefWidth="600.0">
                <children>
-                  <Label text="EAT WITH US" textFill="#f24507">
-                     <font>
-                        <Font name="System Bold" size="12.0" />
-                     </font>
-                  </Label>
+                  <ImageView fitHeight="131.0" fitWidth="104.0" layoutX="56.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="resources/images/logoFinal.png" />
+
+                     </image>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </ImageView>
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="37.0" prefWidth="600.0" />

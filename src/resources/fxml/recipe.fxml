@@ -4,29 +4,28 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:id="borderPaneRecipe" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
    <top>
       <HBox alignment="CENTER_RIGHT" prefHeight="36.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <Pane nodeOrientation="LEFT_TO_RIGHT" prefHeight="36.0" prefWidth="39.0" style="-fx-background-color: yellow;">
+            <ImageView fitHeight="46.0" fitWidth="57.0" layoutX="56.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="resources/images/ImageProfil.jpg" />
+
+               </image>
                <HBox.margin>
                   <Insets right="10.0" />
                </HBox.margin>
-               <padding>
-                  <Insets top="10.0" />
-               </padding>
-               <opaqueInsets>
-                  <Insets top="5.0" />
-               </opaqueInsets>
-            </Pane>
-            <Label contentDisplay="CENTER" text="Youssef Bal" textAlignment="CENTER">
+            </ImageView>
+            <Label contentDisplay="CENTER" text="Alice Duboi" textAlignment="CENTER">
                <HBox.margin>
                   <Insets right="10.0" />
                </HBox.margin>
@@ -46,11 +45,15 @@
          <children>
             <HBox alignment="CENTER" prefHeight="31.0" prefWidth="600.0">
                <children>
-                  <Label text="EAT WITH US" textFill="#f24507">
-                     <font>
-                        <Font name="System Bold" size="12.0" />
-                     </font>
-                  </Label>
+                  <ImageView fitHeight="138.0" fitWidth="119.0" layoutX="56.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="resources/images/logoFinal.png" />
+
+                     </image>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </ImageView>
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="37.0" prefWidth="600.0" />
@@ -67,27 +70,27 @@
                               </Label>
                               <Label layoutX="28.0" layoutY="40.0" text="Nom de la recette :">
                                  <font>
-                                    <Font name="System Bold" size="12.0" />
+                                    <Font name="System Bold" size="16.0" />
                                  </font>
                               </Label>
                               <Label layoutX="28.0" layoutY="74.0" text="Catégorie :">
                                  <font>
-                                    <Font name="System Bold" size="12.0" />
+                                    <Font name="System Bold" size="16.0" />
                                  </font>
                               </Label>
                               <Label layoutX="28.0" layoutY="109.0" text="Prix (en euro) :">
                                  <font>
-                                    <Font name="System Bold" size="12.0" />
+                                    <Font name="System Bold" size="16.0" />
                                  </font>
                               </Label>
                               <Label layoutX="28.0" layoutY="139.0" text="Nombre de calories :">
                                  <font>
-                                    <Font name="System Bold" size="12.0" />
+                                    <Font name="System Bold" size="16.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="28.0" layoutY="168.0" text="Temps totel(en min) :">
+                              <Label layoutX="28.0" layoutY="168.0" text="Temps total (en min) :">
                                  <font>
-                                    <Font name="System Bold" size="12.0" />
+                                    <Font name="System Bold" size="16.0" />
                                  </font>
                               </Label>
                               <TextField layoutX="183.0" layoutY="36.0" prefHeight="25.0" prefWidth="161.0" />
@@ -100,9 +103,9 @@
                                     <Font name="System Bold" size="14.0" />
                                  </font>
                               </Button>
-                              <Label layoutX="179.0" layoutY="-17.0" prefHeight="35.0" prefWidth="165.0" text="AJOUTER UNE RECETTE" textAlignment="CENTER" textFill="#f24507">
+                              <Label layoutX="179.0" layoutY="-17.0" prefHeight="35.0" prefWidth="250.0" text="AJOUTER UNE RECETTE" textAlignment="CENTER" textFill="#362d2b">
                                  <font>
-                                    <Font name="System Bold" size="14.0" />
+                                    <Font name="System Bold" size="18.0" />
                                  </font>
                               </Label>
                            </children>

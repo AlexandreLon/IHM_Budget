@@ -41,10 +41,15 @@ public class BudgetManagementController extends Controller{
         validCeiling.setOnAction( event -> {
 
             if(!(myCeiling.getText().isEmpty())){
-                ceiling.setText(myCeiling.getText());
-                bm.setCeiling(myCeiling.getText());
+                Boolean test= confirmation();
+                if(test){
+                    ceiling.setText(myCeiling.getText());
+                    bm.setCeiling(myCeiling.getText());
+                }
             }
-
+            else{
+                new Alert(Alert.AlertType.INFORMATION, "Veuillez insérer une valeur !").show();
+            }
         });
 
 
@@ -56,6 +61,7 @@ public class BudgetManagementController extends Controller{
                 new Alert(Alert.AlertType.ERROR, "Failed to open FXML View!").show();
             }
         });
+
 
     }
 }
