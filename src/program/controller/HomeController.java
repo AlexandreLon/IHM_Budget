@@ -22,7 +22,8 @@ public class HomeController extends Controller {
 
     @FXML
     private Hyperlink budget;
-
+    @FXML
+    private  Hyperlink recipe;
     @FXML
     private BorderPane borderPane;
 
@@ -70,6 +71,15 @@ public class HomeController extends Controller {
                 redirectionToBudgetManagement(View.BUDGETMANAGEMENT, borderPane);
             } catch (IOException e) {
                 e.printStackTrace();
+            }
+        });
+
+        recipe.setOnAction(event -> {
+            try {
+                redirectionToRecipe(View.RECIPE, borderPane);
+            } catch (IOException e) {
+                e.printStackTrace();
+                new Alert(Alert.AlertType.ERROR, "Failed to open FXML View!").show();
             }
         });
 

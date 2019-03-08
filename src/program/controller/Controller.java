@@ -110,6 +110,23 @@ public abstract class Controller {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void redirectionToRecipe(String fxmlFile, Parent element)throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        try {
+            RecipeController controler = new RecipeController();
+            loader.setController(controler);
+            Stage stage=(Stage) element.getScene().getWindow();
+            Parent rootNode = loader.load(getClass().getResourceAsStream(fxmlFile));
+            rootNode.getStylesheets().add("/resources/styles/styles.css");
+            controler.init();
+            stage.setScene(new Scene(rootNode,800,600));
+            stage.setTitle("EAT WITH US");
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 

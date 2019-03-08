@@ -83,7 +83,7 @@
                         </HBox>
                         <HBox alignment="CENTER">
                            <children>
-                              <Hyperlink style="-fx-border-color: grey;" text="Mes Recettes" />
+                              <Hyperlink fx:id="recipe" style="-fx-border-color: grey;" text="Mes Recettes" />
                            </children>
                         </HBox>
                      </children>
