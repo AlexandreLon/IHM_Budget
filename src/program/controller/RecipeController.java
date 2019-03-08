@@ -26,7 +26,7 @@ public class RecipeController extends Controller{
                 redirectionToAccueil(View.ACCUEIL, borderPane);
             } catch (IOException e) {
                 e.printStackTrace();
-                new Alert(Alert.AlertType.ERROR, "Failed to open FXML View!!!").show();
+                new Alert(Alert.AlertType.ERROR, "Failed to open FXML View!!!!").show();
             }
         });
 
