@@ -13,8 +13,13 @@ class HistoryController extends Controller
 {
     @FXML
     private ListView listView;
-    private HistoryModel historyModel = new HistoryModel();
+    private HistoryModel historyModel;
     private ObservableList observableList = FXCollections.observableArrayList();
+
+    HistoryController(HistoryModel history)
+    {
+        this.historyModel = history;
+    }
 
     protected void init()
     {

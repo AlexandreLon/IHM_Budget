@@ -43,7 +43,9 @@ class SpentController
      */
     void setInfo(SpentModel spent)
     {
-        value.setText(Integer.toString(spent.getValue()));
+        int v = spent.getValue();
+        v = spent.isSpent() ? -v : v;
+        value.setText(Integer.toString(v));
         description.setText(spent.getDescription());
         date.setText(spent.getDate());
     }

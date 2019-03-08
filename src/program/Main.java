@@ -22,11 +22,11 @@ public class Main extends Application
     {
 
         FXMLLoader loader = new FXMLLoader();
-        ConnectionController Controller = new ConnectionController();
-        loader.setController(Controller);
+        ConnectionController controller = new ConnectionController();
+        loader.setController(controller);
         Parent root = loader.load(getClass().getResourceAsStream(View.CONNECTION));
         root.getStylesheets().add("/resources/styles/styles.css");
-        Controller.init();
+        controller.init();
 
         stage.setScene(new Scene(root, 800, 570));
         stage.setTitle("Connexion");

@@ -3,7 +3,9 @@ package program.controller;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Hyperlink;
+import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
+import program.model.HistoryModel;
 
 import java.io.IOException;
 
@@ -15,12 +17,22 @@ import java.io.IOException;
  */
 class HomeController extends Controller
 {
+    private HistoryModel history = new HistoryModel();
 
     @FXML
     private Hyperlink budget;
 
     @FXML
     private BorderPane borderPane;
+
+    @FXML
+    private Label sum;
+
+    @FXML
+    private Label dept;
+
+    @FXML
+    private Label asset;
 
     protected void init()
     {
@@ -29,7 +41,7 @@ class HomeController extends Controller
             try
             {
 
-                redirectionToHistory(borderPane);
+                redirectionToHistory(borderPane, history);
             } catch (IOException e)
             {
                 e.printStackTrace();

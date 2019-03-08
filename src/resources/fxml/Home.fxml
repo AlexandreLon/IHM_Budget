@@ -120,7 +120,7 @@
                               <Insets left="5.0" right="5.0" />
                            </VBox.margin>
                            <children>
-                              <Label prefHeight="28.0" prefWidth="177.0" text="Totale:       190e" />
+                              <Label fx:id="sum" prefHeight="28.0" prefWidth="177.0" />
                            </children>
                         </HBox>
                         <HBox prefHeight="23.0" prefWidth="163.0">
@@ -130,7 +130,7 @@
                            <children>
                               <HBox>
                                  <children>
-                                    <Label prefHeight="23.0" prefWidth="169.0" text="Depense:   78e" />
+                                    <Label fx:id="asset" prefHeight="23.0" prefWidth="169.0" />
                                  </children>
                               </HBox>
                            </children>
@@ -142,7 +142,7 @@
                            <children>
                               <HBox>
                                  <children>
-                                    <Label prefHeight="21.0" prefWidth="218.0" text="Reste:           112e" />
+                                    <Label fx:id="dept" prefHeight="21.0" prefWidth="218.0" />
                                  </children>
                               </HBox>
                            </children>

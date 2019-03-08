@@ -86,4 +86,17 @@ public class SpentModel implements Comparable<SpentModel>
     {
         return (int) (o.date - this.date);
     }
+
+    /**
+     * @return spent
+     */
+    public boolean isSpent()
+    {
+        return isSpent;
+    }
+
+    long getTimestamp()
+    {
+        return date;
+    }
 }

@@ -4,6 +4,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import program.model.HistoryModel;
 import program.view.View;
 
 import java.io.IOException;
@@ -54,9 +55,9 @@ abstract class Controller
         redirectionTo(element, View.CONNECTION, new ConnectionController());
     }
 
-    void redirectionToHistory(Parent element) throws IOException
+    void redirectionToHistory(Parent element, HistoryModel history) throws IOException
     {
-        redirectionTo(element, View.HISTORY, new HistoryController());
+        redirectionTo(element, View.HISTORY, new HistoryController(history));
 
     }
 
