@@ -6,34 +6,32 @@ import javafx.fxml.FXML;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.util.Callback;
+import program.model.HistoryModel;
 import program.model.SpentModel;
 
-import java.util.HashSet;
-import java.util.Set;
-import java.util.TreeSet;
-
-public class BudgetController
+class HistoryController extends Controller
 {
     @FXML
     private ListView listView;
-    private Set<SpentModel> stringSet = new TreeSet<>();
-    ObservableList observableList = FXCollections.observableArrayList();
+    private HistoryModel historyModel;
+    private ObservableList observableList = FXCollections.observableArrayList();
 
-    public void init()
+    HistoryController(HistoryModel history)
     {
-        stringSet.add(new SpentModel());
-        stringSet.add(new SpentModel());
-        stringSet.add(new SpentModel());
-        stringSet.add(new SpentModel());
-        observableList.setAll(stringSet);
+        this.historyModel = history;
+    }
+
+    protected void init()
+    {
+        observableList.setAll(historyModel.getSpentList());
         listView.setItems(observableList);
         listView.setCellFactory((Callback<ListView<String>, ListCell>) listView -> new ListCell<SpentModel>()
         {
             @Override
             public void updateItem(SpentModel menuModel, boolean empty)
             {
-                super.updateItem(menuModel,empty);
-                if(menuModel != null)
+                super.updateItem(menuModel, empty);
+                if (menuModel != null)
                 {
                     SpentController menu = new SpentController();
                     menu.setInfo(menuModel);

@@ -41,7 +41,7 @@ public class BudgetManagementController extends Controller{
         validCeiling.setOnAction( event -> {
 
             if(!(myCeiling.getText().isEmpty())){
-                Boolean test= confirmation();
+                Boolean test= true; //confirmation();
                 if(test){
                     ceiling.setText(myCeiling.getText());
                     bm.setCeiling(myCeiling.getText());
@@ -55,7 +55,7 @@ public class BudgetManagementController extends Controller{
 
         back.setOnAction(event -> {
             try {
-                redirectionToAccueil(View.ACCUEIL, borderPane);
+                redirectionToHome(borderPane);
             } catch (IOException e) {
                 e.printStackTrace();
                 new Alert(Alert.AlertType.ERROR, "Failed to open FXML View!").show();

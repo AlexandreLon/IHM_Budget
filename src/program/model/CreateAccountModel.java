@@ -7,7 +7,8 @@ package program.model;
  * @version 2019.02.24
  */
 
-public class CreateAccountModel {
+public class CreateAccountModel
+{
     /**
      * user nom
      */
@@ -32,27 +33,29 @@ public class CreateAccountModel {
 
     /**
      * check filed
-     * @param email user mail
-     * @param pwd user password
-     * @param nom user firstname
+     *
+     * @param email  user mail
+     * @param pwd    user password
+     * @param nom    user firstname
      * @param prenom user lastname
-     * @param cpwd user confirmPassword
+     * @param cpwd   user confirmPassword
      */
-    public CreateAccountModel(String nom,String prenom,String email, String  pwd,String cpwd) {
-        this.nom=nom;
-        this.prenom=prenom;
+    public CreateAccountModel(String nom, String prenom, String email, String pwd, String cpwd)
+    {
+        this.nom = nom;
+        this.prenom = prenom;
         this.email = email;
         this.pwd = pwd;
-        this.cPwd=cpwd;
+        this.cPwd = cpwd;
     }
 
     /**
-     *
      * @return True if email and pwd are correct
      */
-    public boolean verify () {
+    public boolean verify()
+    {
 
-        return !nom.isEmpty()&&!prenom.isEmpty()&&!email.isEmpty()&&!pwd.isEmpty()&&!cPwd.isEmpty();
+        return !nom.isEmpty() && !prenom.isEmpty() && !email.isEmpty() && !pwd.isEmpty() && !cPwd.isEmpty();
 
     }
 

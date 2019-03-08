@@ -23,7 +23,7 @@ public class RecipeController extends Controller{
 
         valid.setOnAction(event -> {
             try {
-                redirectionToAccueil(View.ACCUEIL, borderPane);
+                redirectionToHome(borderPane);
             } catch (IOException e) {
                 e.printStackTrace();
                 new Alert(Alert.AlertType.ERROR, "Failed to open FXML View!!!!").show();
@@ -32,7 +32,7 @@ public class RecipeController extends Controller{
 
         back.setOnAction(event -> {
             try {
-                redirectionToAccueil(View.ACCUEIL, borderPane);
+                redirectionToHome(borderPane);
             } catch (IOException e) {
                 e.printStackTrace();
                 new Alert(Alert.AlertType.ERROR, "Failed to open FXML View!!").show();
