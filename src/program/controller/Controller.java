@@ -58,8 +58,16 @@ abstract class Controller
     void redirectionToHistory(Parent element, HistoryModel history) throws IOException
     {
         redirectionTo(element, View.HISTORY, new HistoryController(history));
-
     }
 
+    void redirectionToRecipe(Parent element) throws IOException
+    {
+        redirectionTo(element, View.RECIPE, new RecipeController());
+    }
+
+    void redirectionToBudgetManagement(Parent element) throws IOException
+    {
+        redirectionTo(element, View.BUDGETMANAGEMENT, new BudgetManagementController());
+    }
 
 }

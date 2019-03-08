@@ -81,7 +81,7 @@ class HomeController extends Controller
        rest.setText(result);
         budget.setOnAction(event -> {
             try {
-                redirectionToBudget(View.HISTORY, borderPane);
+                redirectionToHistory(borderPane, history);
             } catch (IOException e) {
                 e.printStackTrace();
                 new Alert(Alert.AlertType.ERROR, "Failed to open FXML View!").show();
@@ -89,7 +89,7 @@ class HomeController extends Controller
         });
         myBudget.setOnAction(event -> {
             try {
-                redirectionToBudgetManagement(View.BUDGETMANAGEMENT, borderPane);
+                redirectionToBudgetManagement(borderPane);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -97,7 +97,7 @@ class HomeController extends Controller
 
         recipe.setOnAction(event -> {
             try {
-                redirectionToRecipe(View.RECIPE, borderPane);
+                redirectionToRecipe(borderPane);
             } catch (IOException e) {
                 e.printStackTrace();
                 new Alert(Alert.AlertType.ERROR, "Failed to open FXML View!").show();
