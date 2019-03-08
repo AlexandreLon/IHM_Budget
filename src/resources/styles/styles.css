@@ -82,7 +82,7 @@ label{
 .menue{
 -fx-text-fill: #4F6168;
 -fx-font-weight: bold;
--fx-font-size: 20px;
+-fx-font-size: 17px;
 
 }
 
@@ -93,7 +93,15 @@ label{
 -fx-font-size: 20px;
 
 }
-#accueil{
+#borderPane{
 
--fx-background-image: url("/resources/images/aba.jpg");
+-fx-background-image: url("../images/fondEcran.jpg");
+}
+#borderPaneRecipe{
+    -fx-background-image: url("../images/llll.jpg");
+}
+
+#borderPaneHistory{
+    -fx-background-image: url("../images/FondHistorique.jpg");
+
 }
