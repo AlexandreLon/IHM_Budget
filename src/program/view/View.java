@@ -12,5 +12,5 @@ public abstract class View {
     public static final String CREATEACCOUNT  = "/resources/fxml/CreateAccount.fxml";
     public static final String RECIPES  =  "/resources/fxml/recipes.fxml";
     public static final String HISTORY  =  "/resources/fxml/history.fxml";
-
+    public static final String BUDGETMANAGEMENT  =  "/resources/fxml/manage_budget.fxml";
 }
