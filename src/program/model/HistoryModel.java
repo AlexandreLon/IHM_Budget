@@ -10,9 +10,18 @@ public class HistoryModel
      * Default constructor
      * @param spents
      */
-    private HistoryModel(SpentModel... spents)
+    private HistoryModel(SpentModel[] spents)
     {
-        spentList = new TreeSet<>(Arrays.asList(spents));
+        spentList = new HashSet<>(Arrays.asList(spents));
+    }
+
+    @Override
+    public String toString()
+    {
+        StringBuilder str = new StringBuilder("[");
+        spentList.forEach(str::append);
+        str.append("]");
+        return str.toString();
     }
 
     /**
@@ -20,7 +29,8 @@ public class HistoryModel
      */
     public HistoryModel()
     {
-        this(new SpentModel(), new SpentModel(), new SpentModel(), new SpentModel(), new SpentModel(), new SpentModel());
+        System.out.println("WTF france");
+        spentList = new HashSet<>();
     }
 
     public Set<SpentModel> getSpentList()
@@ -45,5 +55,15 @@ public class HistoryModel
     public void createAndAddSpent(int value, String description)
     {
         addSpent(new SpentModel(value, description, System.currentTimeMillis()));
+    }
+
+    public String toObjectString()
+    {
+        return super.toString();
+    }
+
+    public int getSumSpent()
+    {
+        return spentList.stream().mapToInt(SpentModel::getValue).sum();
     }
 }

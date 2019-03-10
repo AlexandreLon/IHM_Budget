@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
 
-public class SpentModel implements Comparable<SpentModel>
+public class SpentModel
 {
 
     /**
@@ -15,6 +15,17 @@ public class SpentModel implements Comparable<SpentModel>
      * Spent description (what is it)
      */
     private String description;
+
+    @Override
+    public String toString()
+    {
+        return "SpentModel{" +
+                "value=" + value +
+                ", description='" + description + '\'' +
+                ", date=" + date +
+                '}';
+    }
+
     /**
      * Date of spent
      */
@@ -25,7 +36,7 @@ public class SpentModel implements Comparable<SpentModel>
      */
     SpentModel()
     {
-        this(new Random().nextInt(200), "Random", System.currentTimeMillis());
+        this(new Random().nextInt(200), "Random" + new Random().nextInt(1000), System.currentTimeMillis());
     }
 
     /**
@@ -68,16 +79,5 @@ public class SpentModel implements Comparable<SpentModel>
         String pattern = "dd/MM/yyyy";
         SimpleDateFormat df = new SimpleDateFormat(pattern);
         return df.format(new Date(date));
-    }
-
-    /**
-     * Compare to spent with date
-     * @param o
-     * @return
-     */
-    @Override
-    public int compareTo(SpentModel o)
-    {
-        return (int) (o.date - this.date);
     }
 }

@@ -19,6 +19,10 @@ import java.io.IOException;
 abstract class Controller
 {
 
+    private static final Controller HOME_CONTROLLER = new HomeController();
+    private static final Controller CREATE_ACCOUNT_CONTROLLER = new CreateAccountController();
+    private static final Controller CONNEXION_CONTROLLER = new ConnectionController();
+
     private void redirectionTo(Parent element, String target, Controller controller) throws IOException
     {
         FXMLLoader loader = new FXMLLoader();
@@ -42,17 +46,17 @@ abstract class Controller
 
     void redirectionToCreateAccount(Parent element) throws IOException
     {
-        redirectionTo(element, View.CREATEACCOUNT, new CreateAccountController());
+        redirectionTo(element, View.CREATEACCOUNT, CREATE_ACCOUNT_CONTROLLER);
     }
 
     void redirectionToHome(Parent element) throws IOException
     {
-        redirectionTo(element, View.HOME, new HomeController());
+        redirectionTo(element, View.HOME, HOME_CONTROLLER);
     }
 
     void redirectionToConnection(Parent element) throws IOException
     {
-        redirectionTo(element, View.CONNECTION, new ConnectionController());
+        redirectionTo(element, View.CONNECTION, CONNEXION_CONTROLLER);
     }
 
     void redirectionToHistory(Parent element, HistoryModel history) throws IOException
@@ -60,9 +64,9 @@ abstract class Controller
         redirectionTo(element, View.HISTORY, new HistoryController(history));
     }
 
-    void redirectionToRecipe(Parent element) throws IOException
+    void redirectionToRecipe(Parent element, HistoryModel history) throws IOException
     {
-        redirectionTo(element, View.RECIPE, new RecipeController());
+        redirectionTo(element, View.RECIPE, new RecipeController(history));
     }
 
     void redirectionToBudgetManagement(Parent element) throws IOException

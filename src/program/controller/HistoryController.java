@@ -39,13 +39,13 @@ class HistoryController extends Controller
         listView.setCellFactory((Callback<ListView<String>, ListCell>) listView -> new ListCell<SpentModel>()
         {
             @Override
-            public void updateItem(SpentModel menuModel, boolean empty)
+            public void updateItem(SpentModel spent, boolean empty)
             {
-                super.updateItem(menuModel, empty);
-                if (menuModel != null)
+                super.updateItem(spent, empty);
+                if (spent != null)
                 {
                     SpentController menu = new SpentController();
-                    menu.setInfo(menuModel);
+                    menu.setInfo(spent);
                     setGraphic(menu.getBox());
                 }
             }

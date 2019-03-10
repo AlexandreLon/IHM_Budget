@@ -73,7 +73,7 @@ class HomeController extends Controller
     protected void init() {
        BudgetManagementModel bmd = new BudgetManagementModel();
        spent.setText(bmd.getBudget());
-       int bud=-Integer.parseInt(bmd.getBudget());
+       int bud=-Integer.parseInt(String.valueOf(history.getSumSpent()));
        int ceil=Integer.parseInt(bmd.getCeiling());
        show(bud,ceil);
        int res = ceil+bud;
@@ -81,6 +81,8 @@ class HomeController extends Controller
        rest.setText(result);
         budget.setOnAction(event -> {
             try {
+                System.out.println(history);
+                System.out.println(history.toObjectString());
                 redirectionToHistory(borderPane, history);
             } catch (IOException e) {
                 e.printStackTrace();
@@ -97,7 +99,7 @@ class HomeController extends Controller
 
         recipe.setOnAction(event -> {
             try {
-                redirectionToRecipe(borderPane);
+                redirectionToRecipe(borderPane, history);
             } catch (IOException e) {
                 e.printStackTrace();
                 new Alert(Alert.AlertType.ERROR, "Failed to open FXML View!").show();
