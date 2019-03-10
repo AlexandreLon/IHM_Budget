@@ -16,10 +16,6 @@ public class SpentModel implements Comparable<SpentModel>
      */
     private String description;
     /**
-     * True if it's a purchase, False else
-     */
-    private boolean isSpent;
-    /**
      * Date of spent
      */
     private long date;
@@ -29,21 +25,19 @@ public class SpentModel implements Comparable<SpentModel>
      */
     SpentModel()
     {
-        this(new Random().nextInt(200), "Random", new Random().nextBoolean(), System.currentTimeMillis());
+        this(new Random().nextInt(200), "Random", System.currentTimeMillis());
     }
 
     /**
      * Constructor
      * @param value
      * @param description
-     * @param isSpent
      * @param date
      */
-    SpentModel(int value, String description, boolean isSpent, long date)
+    SpentModel(int value, String description, long date)
     {
         this.value = value;
         this.description = description;
-        this.isSpent = isSpent;
         this.date = date;
     }
 
@@ -85,18 +79,5 @@ public class SpentModel implements Comparable<SpentModel>
     public int compareTo(SpentModel o)
     {
         return (int) (o.date - this.date);
-    }
-
-    /**
-     * @return spent
-     */
-    public boolean isSpent()
-    {
-        return isSpent;
-    }
-
-    long getTimestamp()
-    {
-        return date;
     }
 }
