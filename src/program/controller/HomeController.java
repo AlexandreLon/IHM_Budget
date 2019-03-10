@@ -81,8 +81,6 @@ class HomeController extends Controller
        rest.setText(result);
         budget.setOnAction(event -> {
             try {
-                System.out.println(history);
-                System.out.println(history.toObjectString());
                 redirectionToHistory(borderPane, history);
             } catch (IOException e) {
                 e.printStackTrace();

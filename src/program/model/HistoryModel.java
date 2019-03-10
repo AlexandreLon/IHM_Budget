@@ -7,29 +7,10 @@ public class HistoryModel
     private Set<SpentModel> spentList;
 
     /**
-     * Default constructor
-     * @param spents
-     */
-    private HistoryModel(SpentModel[] spents)
-    {
-        spentList = new HashSet<>(Arrays.asList(spents));
-    }
-
-    @Override
-    public String toString()
-    {
-        StringBuilder str = new StringBuilder("[");
-        spentList.forEach(str::append);
-        str.append("]");
-        return str.toString();
-    }
-
-    /**
-     * Create random list just to test
+     * Constructor by default
      */
     public HistoryModel()
     {
-        System.out.println("WTF france");
         spentList = new HashSet<>();
     }
 
@@ -55,11 +36,6 @@ public class HistoryModel
     public void createAndAddSpent(int value, String description)
     {
         addSpent(new SpentModel(value, description, System.currentTimeMillis()));
-    }
-
-    public String toObjectString()
-    {
-        return super.toString();
     }
 
     public int getSumSpent()

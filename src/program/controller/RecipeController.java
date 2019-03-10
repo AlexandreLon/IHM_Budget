@@ -38,8 +38,6 @@ public class RecipeController extends Controller{
         valid.setOnAction(event -> {
             try {
                 history.createAndAddSpent(Integer.valueOf(spent_price.getText()), spent_description.getText());
-                System.out.println(history);
-                System.out.println(history.toObjectString());
                 redirectionToHome(borderPaneRecipe);
             } catch (IOException e) {
                 e.printStackTrace();

@@ -16,16 +16,6 @@ public class SpentModel
      */
     private String description;
 
-    @Override
-    public String toString()
-    {
-        return "SpentModel{" +
-                "value=" + value +
-                ", description='" + description + '\'' +
-                ", date=" + date +
-                '}';
-    }
-
     /**
      * Date of spent
      */
