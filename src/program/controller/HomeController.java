@@ -9,6 +9,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.paint.Color;
 import program.model.BudgetManagementModel;
 import program.view.View;
 import program.model.HistoryModel;
@@ -72,13 +73,15 @@ class HomeController extends Controller
 
     protected void init() {
        BudgetManagementModel bmd = new BudgetManagementModel();
-       spent.setText(bmd.getBudget());
+       spent.setText(String.valueOf(history.getSumSpent()));
        int bud=-Integer.parseInt(String.valueOf(history.getSumSpent()));
        int ceil=Integer.parseInt(bmd.getCeiling());
        show(bud,ceil);
        int res = ceil+bud;
        String result=Integer.toString(res);
+
        rest.setText(result);
+        if(res<0){rest.setTextFill(Color.RED);}
         budget.setOnAction(event -> {
             try {
                 redirectionToHistory(borderPane, history);
