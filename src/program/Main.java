@@ -5,44 +5,42 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import program.controller.ConnectionControler;
+import program.controller.ConnectionController;
 import program.view.View;
 
 
-public class Main extends Application {
+public class Main extends Application
+{
 
+    /**
+     * The main entry point for all JavaFX applications.
+     * @param stage (Useful to create window JavaFX)
+     * @throws Exception Exception if page creating it's impossible
+     */
     @Override
-    public void start(Stage stage) throws Exception{
+    public void start(Stage stage) throws Exception
+    {
 
         FXMLLoader loader = new FXMLLoader();
-
-        //create a controller
-        ConnectionControler Controller = new ConnectionControler();
-
-        //attach controller
-        loader.setController(Controller);
-
-        //attach XML file
-        Parent root = loader.load(getClass().getResourceAsStream(View.CONNEXION));
-
-        //attach css file
+        ConnectionController controller = new ConnectionController();
+        loader.setController(controller);
+        Parent root = loader.load(getClass().getResourceAsStream(View.CONNECTION));
         root.getStylesheets().add("/resources/styles/styles.css");
+        controller.init();
 
-        //initialize the controller
-        Controller.init();
-
-        //create the view
         stage.setScene(new Scene(root, 800, 570));
         stage.setTitle("Connexion");
 
-        //show the view
         stage.show();
-
-
     }
 
 
-    public static void main(String[] args) {
+    /**
+     * Start methods
+     * @param args Argument app
+     */
+    public static void main(String[] args)
+    {
         launch(args);
     }
 }

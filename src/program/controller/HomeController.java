@@ -5,9 +5,13 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.*;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Hyperlink;
+import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import program.model.BudgetManagementModel;
 import program.view.View;
+import program.model.HistoryModel;
 
 import java.io.IOException;
 
@@ -18,7 +22,9 @@ import java.io.IOException;
  * @version 2019.02.24
  */
 
-public class HomeController extends Controller {
+class HomeController extends Controller
+{
+    private HistoryModel history = new HistoryModel();
 
     @FXML
     private Button budget;
@@ -26,6 +32,15 @@ public class HomeController extends Controller {
     private  Hyperlink recipe;
     @FXML
     private BorderPane borderPane;
+
+    @FXML
+    private Label sum;
+
+    @FXML
+    private Label dept;
+
+    @FXML
+    private Label asset;
 
     @FXML
     private Button myBudget;
@@ -47,19 +62,18 @@ public class HomeController extends Controller {
 
 
     public void show(int budget,int ceiling) {
-            ObservableList<PieChart.Data> pieChartData
-                    = FXCollections.observableArrayList(
-                    new PieChart.Data("Depense", budget),
-                    new PieChart.Data("Plafond",ceiling)
-            );
-            pieChart.setData(pieChartData);
-        }
+        ObservableList<PieChart.Data> pieChartData
+                = FXCollections.observableArrayList(
+                new PieChart.Data("Depense", budget),
+                new PieChart.Data("Plafond",ceiling)
+        );
+        pieChart.setData(pieChartData);
+    }
 
-
-    public void init() {
+    protected void init() {
        BudgetManagementModel bmd = new BudgetManagementModel();
        spent.setText(bmd.getBudget());
-       int bud=-Integer.parseInt(bmd.getBudget());
+       int bud=-Integer.parseInt(String.valueOf(history.getSumSpent()));
        int ceil=Integer.parseInt(bmd.getCeiling());
        show(bud,ceil);
        int res = ceil+bud;
@@ -67,7 +81,9 @@ public class HomeController extends Controller {
        rest.setText(result);
         budget.setOnAction(event -> {
             try {
-                redirectionToBudget(View.HISTORY, borderPane);
+                System.out.println(history);
+                System.out.println(history.toObjectString());
+                redirectionToHistory(borderPane, history);
             } catch (IOException e) {
                 e.printStackTrace();
                 new Alert(Alert.AlertType.ERROR, "Failed to open FXML View!").show();
@@ -75,7 +91,7 @@ public class HomeController extends Controller {
         });
         myBudget.setOnAction(event -> {
             try {
-                redirectionToBudgetManagement(View.BUDGETMANAGEMENT, borderPane);
+                redirectionToBudgetManagement(borderPane);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -83,7 +99,7 @@ public class HomeController extends Controller {
 
         recipe.setOnAction(event -> {
             try {
-                redirectionToRecipe(View.RECIPE, borderPane);
+                redirectionToRecipe(borderPane, history);
             } catch (IOException e) {
                 e.printStackTrace();
                 new Alert(Alert.AlertType.ERROR, "Failed to open FXML View!").show();

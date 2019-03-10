@@ -6,7 +6,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import program.model.ConnectionModel;
-import program.view.View;
 
 import java.io.IOException;
 
@@ -16,7 +15,8 @@ import java.io.IOException;
  * @author G5
  * @version 2019.02.24
  */
-public class ConnectionControler extends Controller {
+public class ConnectionController extends Controller
+{
 
     /**
      * user email
@@ -46,43 +46,50 @@ public class ConnectionControler extends Controller {
 
     /**
      * check the mail:admin@unice and pwd :0000
-     * @param email user mail
+     *
+     * @param email    user mail
      * @param password user password
      */
-    public void valid(TextField email,TextField password)throws IOException {
+    private void valid(TextField email, TextField password) throws IOException
+    {
 
-        ConnectionModel connModel = new ConnectionModel(email.getText(),password.getText());
-       if(connModel.verify()) redirectionToAccueil(View.ACCUEIL,borderPane);
-       else  {new Alert(Alert.AlertType.ERROR,"Failed to login  try with : \n e-mail :admin@unice.fr \n pwd :0000 ").show();}
+        ConnectionModel connModel = new ConnectionModel(email.getText(), password.getText());
+        if (connModel.verify()) redirectionToHome(borderPane);
+        else
+        {
+            new Alert(Alert.AlertType.ERROR, "Failed to login  try with : \n e-mail :admin@unice.fr \n pwd :0000 ").show();
+        }
 
     }
 
-    /**
-     * button activation
-     *
-     */
 
-    public void init() {
-        createAccount.setOnAction( event -> {
-            try {
-                redirectionToCreateAccount(View.CREATEACCOUNT,borderPane);
-            } catch (IOException e) {
+    public void init()
+    {
+        createAccount.setOnAction(event ->
+        {
+            try
+            {
+                redirectionToCreateAccount(borderPane);
+            } catch (IOException e)
+            {
                 e.printStackTrace();
                 new Alert(Alert.AlertType.ERROR, "Failed to open FXML View!").show();
             }
         });
 
-        connection.setOnAction( event -> {
-            try {
-                valid(email,password);
-            } catch (IOException e) {
+        connection.setOnAction(event ->
+        {
+            try
+            {
+                valid(email, password);
+            } catch (IOException e)
+            {
                 e.printStackTrace();
             }
         });
 
-}
-
-
-
     }
+
+
+}
 
