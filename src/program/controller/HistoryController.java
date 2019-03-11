@@ -9,7 +9,7 @@ import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.BorderPane;
 import javafx.util.Callback;
-import program.model.HistoryModel;
+import program.model.BudgetModel;
 import program.model.SpentModel;
 
 import java.io.IOException;
@@ -24,10 +24,10 @@ class HistoryController extends Controller
     @FXML
     private BorderPane borderPaneHistory;
 
-    private HistoryModel historyModel;
+    private BudgetModel historyModel;
     private ObservableList observableList = FXCollections.observableArrayList();
 
-    HistoryController(HistoryModel history)
+    HistoryController(BudgetModel history)
     {
         this.historyModel = history;
     }

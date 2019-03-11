@@ -10,7 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import program.model.BudgetManagementModel;
+import program.model.BudgetModel;
 import program.view.View;
 
 import java.io.IOException;
@@ -20,7 +20,8 @@ import java.io.IOException;
  * @version 2019.02.24
  */
 
-public class BudgetManagementController extends Controller{
+public class BudgetManagementController extends Controller
+{
 
     @FXML
     private TextField myCeiling;
@@ -35,32 +36,52 @@ public class BudgetManagementController extends Controller{
     @FXML
     private BorderPane borderPane;
 
+    @FXML
+    private BudgetModel history;
 
-    public void init() {
+    BudgetManagementController(BudgetModel historyModel)
+    {
+        this.history = historyModel;
+    }
 
-        BudgetManagementModel bm =new BudgetManagementModel();
 
-        ceiling.setText(bm.getCeiling());
+    public void init()
+    {
 
-        validCeiling.setOnAction( event -> {
+        ceiling.setText(String.valueOf(history.getCeiling()));
 
-            if(!(myCeiling.getText().isEmpty())){
+        validCeiling.setOnAction(event ->
+        {
+
+            if (!(myCeiling.getText().isEmpty()))
+            {
                 Boolean test = confirmation();
-                if(test){
+                if (test)
+                {
                     ceiling.setText(myCeiling.getText());
-                    bm.setCeiling(myCeiling.getText());
+                    history.setCeiling(Integer.valueOf(myCeiling.getText()));
                 }
-            }
-            else{
+                try
+                {
+                    redirectionToHome(borderPane);
+                } catch (IOException e)
+                {
+                    e.printStackTrace();
+                }
+            } else
+            {
                 new Alert(Alert.AlertType.INFORMATION, "Veuillez insérer une valeur !").show();
             }
         });
 
 
-        back.setOnAction(event -> {
-            try {
+        back.setOnAction(event ->
+        {
+            try
+            {
                 redirectionToHome(borderPane);
-            } catch (IOException e) {
+            } catch (IOException e)
+            {
                 e.printStackTrace();
                 new Alert(Alert.AlertType.ERROR, "Failed to open FXML View!").show();
             }
@@ -70,17 +91,18 @@ public class BudgetManagementController extends Controller{
     }
 
     /**
-     * retourn true if valid else false
-     *
+     * return true if valid else false
      */
 
-    private boolean confirmation(){
+    private boolean confirmation()
+    {
 
         FXMLLoader loader = new FXMLLoader();
-        try {
-            ConfirmeControler controler=new ConfirmeControler();
+        try
+        {
+            ConfirmeControler controler = new ConfirmeControler();
             loader.setController(controler);
-            Stage stage=new Stage();
+            Stage stage = new Stage();
             Parent rootNode = loader.load(getClass().getResourceAsStream(View.CONFIRM));
             rootNode.getStylesheets().add("/resources/styles/styles.css");
 
@@ -88,7 +110,8 @@ public class BudgetManagementController extends Controller{
             stage.setTitle("confirmation");
             stage.setMinWidth(250);
             return controler.init(stage);
-        } catch (IOException e) {
+        } catch (IOException e)
+        {
             e.printStackTrace();
         }
 

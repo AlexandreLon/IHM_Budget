@@ -2,14 +2,15 @@ package program.model;
 
 import java.util.*;
 
-public class HistoryModel
+public class BudgetModel
 {
     private Set<SpentModel> spentList;
+    private int ceiling = 0;
 
     /**
      * Constructor by default
      */
-    public HistoryModel()
+    public BudgetModel()
     {
         spentList = new HashSet<>();
     }
@@ -23,7 +24,7 @@ public class HistoryModel
      * Add spent in list
      * @param spent
      */
-    public void addSpent(SpentModel spent)
+    private void addSpent(SpentModel spent)
     {
         spentList.add(spent);
     }
@@ -41,5 +42,15 @@ public class HistoryModel
     public int getSumSpent()
     {
         return spentList.stream().mapToInt(SpentModel::getValue).sum();
+    }
+
+    public int getCeiling()
+    {
+        return ceiling;
+    }
+
+    public void setCeiling(int ceiling)
+    {
+        this.ceiling = ceiling;
     }
 }

@@ -22,14 +22,6 @@ public class SpentModel
     private long date;
 
     /**
-     * Generate random spent
-     */
-    SpentModel()
-    {
-        this(new Random().nextInt(200), "Random" + new Random().nextInt(1000), System.currentTimeMillis());
-    }
-
-    /**
      * Constructor
      * @param value
      * @param description

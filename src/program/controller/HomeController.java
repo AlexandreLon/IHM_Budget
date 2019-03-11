@@ -10,8 +10,7 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import program.model.BudgetManagementModel;
-import program.view.View;
-import program.model.HistoryModel;
+import program.model.BudgetModel;
 
 import java.io.IOException;
 
@@ -24,7 +23,7 @@ import java.io.IOException;
 
 class HomeController extends Controller
 {
-    private HistoryModel history = new HistoryModel();
+    private BudgetModel history = new BudgetModel();
 
     @FXML
     private Button budget;
@@ -71,12 +70,11 @@ class HomeController extends Controller
     }
 
     protected void init() {
-       BudgetManagementModel bmd = new BudgetManagementModel();
-       spent.setText(bmd.getBudget());
-       int bud=-Integer.parseInt(String.valueOf(history.getSumSpent()));
-       int ceil=Integer.parseInt(bmd.getCeiling());
+       int bud=history.getSumSpent();
+       spent.setText(String.valueOf(bud));
+       int ceil=history.getCeiling();
        show(bud,ceil);
-       int res = ceil+bud;
+       int res = ceil-bud;
        String result=Integer.toString(res);
        rest.setText(result);
         budget.setOnAction(event -> {
@@ -115,5 +113,9 @@ class HomeController extends Controller
 
     }
 
+    protected BudgetModel getHistory()
+    {
+        return history;
+    }
 }
 

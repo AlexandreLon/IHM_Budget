@@ -7,9 +7,10 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 
-public class ConfirmeControler {
+class ConfirmeControler
+{
 
-static boolean answer;
+    private static boolean answer;
 
     @FXML
     private Button yesButton;
@@ -18,20 +19,25 @@ static boolean answer;
     @FXML
     private BorderPane borderPane;
 
-public boolean init(Stage stage){
+    boolean init(Stage stage)
+    {
 
 
-        yesButton.setOnAction( event -> {answer=true;stage.close();});
-        noButton.setOnAction( event -> {answer=false;stage.close();});
+        yesButton.setOnAction(event ->
+        {
+            answer = true;
+            stage.close();
+        });
+        noButton.setOnAction(event ->
+        {
+            answer = false;
+            stage.close();
+        });
         stage.showAndWait();
 
-return answer;
+        return answer;
 
-}
-
-
-
-
+    }
 
 
 }

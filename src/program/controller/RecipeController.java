@@ -5,14 +5,13 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
-import program.model.HistoryModel;
-import program.view.View;
+import program.model.BudgetModel;
 
 import java.io.IOException;
 
 public class RecipeController extends Controller{
 
-    private final HistoryModel history;
+    private final BudgetModel history;
     @FXML
     private Button valid;
 
@@ -28,7 +27,7 @@ public class RecipeController extends Controller{
     @FXML
     private TextField spent_description;
 
-    RecipeController(HistoryModel history)
+    RecipeController(BudgetModel history)
     {
         this.history = history;
     }
