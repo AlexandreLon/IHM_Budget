@@ -36,8 +36,11 @@ public class RecipeController extends Controller{
 
         valid.setOnAction(event -> {
             try {
-                history.createAndAddSpent(Integer.valueOf(spent_price.getText()), spent_description.getText());
+                Boolean test = confirmation();
+                if(test)
+                { history.createAndAddSpent(Integer.valueOf(spent_price.getText()), spent_description.getText());
                 redirectionToHome(borderPaneRecipe);
+                }
             } catch (IOException e) {
                 e.printStackTrace();
                 new Alert(Alert.AlertType.ERROR, "Failed to open FXML View!!!!").show();
@@ -54,4 +57,5 @@ public class RecipeController extends Controller{
         });
 
     }
+
 }

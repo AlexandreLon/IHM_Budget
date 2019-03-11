@@ -9,7 +9,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
-import program.model.BudgetManagementModel;
+import javafx.scene.paint.Color;
 import program.model.BudgetModel;
 
 import java.io.IOException;
@@ -76,7 +76,9 @@ class HomeController extends Controller
        show(bud,ceil);
        int res = ceil-bud;
        String result=Integer.toString(res);
+
        rest.setText(result);
+        if(res<0){rest.setTextFill(Color.RED);}
         budget.setOnAction(event -> {
             try {
                 redirectionToHistory(borderPane, history);
