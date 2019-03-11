@@ -89,32 +89,4 @@ public class BudgetManagementController extends Controller
 
 
     }
-
-    /**
-     * return true if valid else false
-     */
-
-    private boolean confirmation()
-    {
-
-        FXMLLoader loader = new FXMLLoader();
-        try
-        {
-            ConfirmeControler controler = new ConfirmeControler();
-            loader.setController(controler);
-            Stage stage = new Stage();
-            Parent rootNode = loader.load(getClass().getResourceAsStream(View.CONFIRM));
-            rootNode.getStylesheets().add("/resources/styles/styles.css");
-
-            stage.setScene(new Scene(rootNode));
-            stage.setTitle("confirmation");
-            stage.setMinWidth(250);
-            return controler.init(stage);
-        } catch (IOException e)
-        {
-            e.printStackTrace();
-        }
-
-        return false;
-    }
 }
